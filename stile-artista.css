@@ -1,0 +1,120 @@
+header{
+  font-family: Georgia, serif;
+  Color:brown;
+  background-image: url(img/skyline.png);
+  Height: 175px;
+  Text-align:right;
+  Width:100%; 
+  Margin-top:45px;
+  Margin-bottom:0px;
+}
+
+Header h2{
+   Margin-right:20px;
+   Margin-top:0px;
+}
+nav{
+  Height:40px;
+  Background-color: whitesmoke;
+  Width:100%;
+  Top:0;
+  Left:0;
+  Position:fixed;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: whitesmoke;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: brown;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Change the link color to gainsboro on hover */
+nav li a:hover {
+  background-color: gainsboro;
+}
+
+Body{
+   Background-color:brown;
+}
+
+section{
+  margin: 0px 0px;
+  padding: 0px;
+}
+
+#nome{
+  font-family: Georgia, serif;
+  height:50px;
+  background-color: gold;
+  margin-top:50px;
+  Padding:10px;
+  Padding-left:20px;
+}
+
+#dati{
+  margin-bottom:10px;
+}
+
+#flex-container{
+  Background-color: lightgoldenrodyellow;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  Height:1500px;
+  padding:20px;
+  Margin-top:0px;
+}
+
+.col{
+  background-color:white;
+  padding:5px;
+  Height:370px;
+  width:60%;
+  border-radius:10px;
+
+}
+
+#small{
+  padding-right:20px;
+  width:30%;
+  Height:250px;
+}
+
+p{
+  height:270px;
+  overflow: scroll;
+  margin:10;
+  border-color:black;
+  border-width:1px;
+  border-style:dotted;
+  border-radius:10px;
+  padding: 10px;
+}
+
+footer{
+  background-color: brown;
+  height:30px;
+  Left:0;
+  Bottom:0;
+  Color: white;
+  Text-align: center;
+  Padding:10px;
+  width: 100%;
+  position: fixed;  
+}
+
