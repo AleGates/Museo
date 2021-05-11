@@ -13,6 +13,7 @@ Header h2{
    Margin-right:20px;
    Margin-top:0px;
 }
+
 nav{
   Height:40px;
   Background-color: whitesmoke;
@@ -46,6 +47,24 @@ nav li a {
 /* Change the link color to gainsboro on hover */
 nav li a:hover {
   background-color: gainsboro;
+}
+
+Section a{
+  Color:blue;
+}
+
+Section a:hover{
+  Color:red;
+}
+
+Section a:active{ 
+  Display:block;
+  Background-color:gainsboro;
+  Color:black;
+}
+
+Section a:visited{
+  Color: purple; 
 }
 
 Body{
