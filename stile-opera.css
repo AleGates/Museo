@@ -80,7 +80,7 @@ section{
   Background-color: lightgoldenrodyellow;
   display: flex;
   flex-direction:row;
-  justify-content: space-between;
+  justify-content: space-around;
   Height:1500px;
   padding:20px;
   Margin-top:0px;
