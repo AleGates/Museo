@@ -4,9 +4,9 @@ header{
   background-image: url(img/skyline.png);
   Height: 175px;
   Text-align:right;
-  Margin-top:0px;
-  Top:40;
-  Left:0;
+  Width:100%; 
+  Margin-top:45px;
+  Margin-bottom:0px;
 }
 
 Header h2{
@@ -61,7 +61,7 @@ section{
   font-family: Georgia, serif;
   height:50px;
   background-color: gold;
-  margin-top:200px;
+  margin-top:50px;
   Padding:10px;
   Padding-left:20px;
 }
@@ -109,15 +109,12 @@ section{
 
 footer{
   background-color: brown;
-  height:30px;
-  Left:0;
-  Bottom:0;
+  height: 30px;
+  Left: 0;
+  Bottom: 0;
   Color: white;
   Text-align: center;
-  Padding:10px;
+  Padding: 10px;
+  width: 100%;
+  position: fixed;
 }
-
-header, footer{
-        width: 100%;
-        position: fixed;        
-    }
