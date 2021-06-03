@@ -22,7 +22,7 @@ public class OperaService{
 	}
 
 	@Transactional
-	public List<Opera> collezionePerTitolo(String titolo) {
+	public List<Opera> operaPerTitolo(String titolo) {
 		return operaRepository.findByTitolo(titolo);
 	}
 
@@ -32,7 +32,7 @@ public class OperaService{
 	}
 
 	@Transactional
-	public Opera collezionePerId(Long id) {
+	public Opera operaPerId(Long id) {
 		Optional<Opera> optional = operaRepository.findById(id);
 		if (optional.isPresent())
 			return optional.get();
