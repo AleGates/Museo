@@ -14,7 +14,8 @@ import it.uniroma3.siw.museo.controller.validator.OperaValidator;
 import it.uniroma3.siw.museo.model.Opera;
 import it.uniroma3.siw.museo.service.OperaService;
 
-//vanno aggiunti metodi di: rimozione di opera, aggiunta di artista nell'opera corrente
+//vanno aggiunti metodi di: aggiunta di artista nell'opera corrente
+//va veriricato il funzionamento di deleteOpera (specie il path e il return)
 public class OperaController {
 	
 	@Autowired
@@ -56,4 +57,10 @@ public class OperaController {
         }
         return "operaForm.html";//ancora non esiste
     }
+    
+	@RequestMapping(value = {"/opera/{id}/delete"}, method = RequestMethod.POST)
+	public String deleteOpera(@PathVariable Long id, Model model) {
+		this.operaService.deleteOperaById(id);
+		return "opere.html";//ancora non esiste
+	}
 }

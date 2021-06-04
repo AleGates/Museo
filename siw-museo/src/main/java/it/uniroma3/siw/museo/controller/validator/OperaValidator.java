@@ -19,8 +19,7 @@ public class OperaValidator implements Validator {
 	@Override
 	public void validate(Object o, Errors errors) {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "titolo", "required");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "anno", "required"); //da vedere come reagisce con interi
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "descrizione", "required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "anno", "required"); 
 
 		if (!errors.hasErrors()) {
 			logger.debug("confermato: valori non nulli");
