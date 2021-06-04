@@ -7,23 +7,24 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import it.uniroma3.siw.museo.model.Collezione;
-import it.uniroma3.siw.museo.service.CollezioneService;
+import it.uniroma3.siw.museo.model.Curatore;
+import it.uniroma3.siw.museo.service.CuratoreService;
 
-public class CollezioneValidator implements Validator {
+public class CuratoreValidator implements Validator {
 	@Autowired
-	private CollezioneService collezioneService;
+	private CuratoreService curatoreService;
 	
-    private static final Logger logger = LoggerFactory.getLogger(CollezioneValidator.class);
+    private static final Logger logger = LoggerFactory.getLogger(CuratoreValidator.class);
 
 	@Override
 	public void validate(Object o, Errors errors) {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nome", "required");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "descrizione", "required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "cognome", "required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "matricola", "required");
 
 		if (!errors.hasErrors()) {
 			logger.debug("confermato: valori non nulli");
-			if (this.collezioneService.alreadyExists((Collezione)o)) {
+			if (this.curatoreService.alreadyExists((Curatore)o)) {
 				logger.debug("e' un duplicato");
 				errors.reject("duplicato");
 			}
@@ -32,6 +33,6 @@ public class CollezioneValidator implements Validator {
 
 	@Override
 	public boolean supports(Class<?> aClass) {
-		return Collezione.class.equals(aClass);
+		return Curatore.class.equals(aClass);
 	}
 }

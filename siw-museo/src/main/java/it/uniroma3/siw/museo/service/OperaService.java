@@ -48,4 +48,8 @@ public class OperaService{
 		else 
 			return false;
 	}
+
+	public void deleteOperaById(Long id) {
+		operaRepository.deleteById(id);
+	}
 }

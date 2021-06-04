@@ -47,4 +47,8 @@ public class CollezioneService {
 		else 
 			return false;
 	}
+
+	public void deleteCollezioneById(Long id) {
+		collezioneRepository.deleteById(id);
+	}
 }

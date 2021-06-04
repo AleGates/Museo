@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import it.uniroma3.siw.museo.controller.validator.CollezioneValidator;
 import it.uniroma3.siw.museo.model.Collezione;
 import it.uniroma3.siw.museo.service.CollezioneService;
-//vanno aggiunti metodi di: rimozione di collezione, aggiunta/rimozione opere nella collezione corrente
+//vanno aggiunti metodi di: aggiunta/rimozione opere e curatori nella collezione corrente
+//va veriricato il funzionamento di deleteCollezione (specie il path e il return)
 public class CollezioneController {
 	
 	@Autowired
@@ -55,4 +56,10 @@ public class CollezioneController {
         }
         return "collezioneForm.html";//ancora non esiste
     }
+    
+	@RequestMapping(value = {"/collezione/{id}/delete"}, method = RequestMethod.POST)
+	public String deleteCollezione(@PathVariable Long id, Model model) {
+		this.collezioneService.deleteCollezioneById(id);
+		return "collezioni.html";//ancora non esiste
+	}
 }
