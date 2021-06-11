@@ -30,7 +30,7 @@ public class Curatore {
 	
 	@Column (nullable=false)
 	private String cognome;
-	//matricola unica
+
 	@Column (unique=true, nullable=false)
 	private Long matricola;
 	

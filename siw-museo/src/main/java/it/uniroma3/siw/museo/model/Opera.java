@@ -27,8 +27,7 @@ public class Opera {
 	
 	@Column (nullable=false)
 	private Long anno;
-	
-	//cambia lunghezza della descrizione
+
 	private String descrizione;
 	
 	@ManyToOne
