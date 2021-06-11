@@ -35,7 +35,7 @@ public class Artista {
 	private String luogoNascita;
 
 	private LocalDate dataMorte;
-
+	
 	private String luogoMorte;
 
 	private String nazionalita;

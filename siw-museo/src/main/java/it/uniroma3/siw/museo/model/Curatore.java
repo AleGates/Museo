@@ -30,8 +30,8 @@ public class Curatore {
 	
 	@Column (nullable=false)
 	private String cognome;
-	//constraint-da rivedere
-	@Column (nullable=false)
+
+	@Column (unique=true, nullable=false)
 	private Long matricola;
 	
 	private LocalDate dataDiNascita;
