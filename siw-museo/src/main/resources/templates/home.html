@@ -1,9 +1,9 @@
 <html>
-  <head>
+  <head xmlns:th="http://www.thymeleaf.org">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>Museo di Roma</title>
-    <link href="stile-home.css" rel="stylesheet"> 
+    <link th:href="@{/css/stile-home.css}" rel="stylesheet">
   </head>
 
   <body>
@@ -19,7 +19,7 @@
 
    <header>
     <h1>Museo di Roma 
-    <img src="img/roma-stemma.png" alt="roma-capitale" height="53px" width="40px">
+    <img src="images/roma-stemma.png" alt="roma-capitale" height="53px" width="40px">
     </h1>
     <h2>BENVENUTO</h2>
    </header>
@@ -29,13 +29,13 @@
     <section id="dati">
       <div id="flex-container">
         <div>
-           <img src="img/compianto-giotto.png" alt="img1" height="400px" width="400">
+           <img src="images/compianto-giotto.png" alt="img1" height="400px" width="400">
        	</div>
         <div>
-	   <img src="img/venere-botticelli.png" alt="img2" height="400px" width="400px">
+	   <img src="images/venere-botticelli.png" alt="img2" height="400px" width="400px">
  	</div>
 	<div>
-	  <img src="img/vergine-leonardo.png" alt="img3" height="400px" width="400px">
+	  <img src="images/vergine-leonardo.png" alt="img3" height="400px" width="400px">
         </div>
       </div>
     </section>
