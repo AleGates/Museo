@@ -68,16 +68,19 @@ section{
   display: flex;
   flex-direction:row;
   justify-content: space-between;
-  Height:500px;
   padding:20px;
   Margin-top:30%;
+  margin-bottom:25px;
 }
 
 .div{
   padding:5px;
-  Height:1800px;
   width:100%;
   border-radius:10px;
+}
+
+div img{
+	margin-bottom:20px;
 }
 
 
