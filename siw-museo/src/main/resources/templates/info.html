@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="fragments/base.html :: headerfiles(#{title.info}, stile-info.css)"></head>
+  
+  <body>
+  
+    <nav th:replace="fragments/base.html :: navbar"></nav>
+
+    <header th:replace="fragments/base.html :: header"></header>
+    <div>
+       <h1>INFORMAZIONI</h1>
+       <span>Ciao a tutti questo è il sito web del museo di Roma</span>
+       
+    </div>
+    
+    <footer th:replace="fragments/base.html :: footer"></footer>
+    
+  </body>
+
+</html>
