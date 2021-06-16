@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head th:replace="fragments/base.html :: headerfiles(ERRORpage, stile-error.css)"></head>
+   <body>
+     
+    <nav th:replace="fragments/base.html :: navbar"></nav>
+
+    <header th:replace="fragments/base.html :: header"></header>
+    
+      <div>
+         <h1>Our apologies.</h1>
+         <p>The page is currently unreachable.</p>
+         <p>Please go back to our homepage to restart your browsing experience.</p>
+      </div>
+           <footer th:replace="fragments/base.html :: footer"></footer>
+   </body>
+</html>

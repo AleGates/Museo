@@ -1,27 +1,12 @@
-  <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>Museo di Roma</title>
-    <link href="stile-collezione.css" rel="stylesheet"> 
-  </head>
-
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="fragments/base.html :: headerfiles(#{title.collezione}, stile-collezione.css)"></head>
+  
   <body>
-    <nav>
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="news.asp">Autori</a></li>
-        <li><a href="contact.asp">Collezioni</a></li>
-        <li><a href="about.asp">Informazioni</a></li>
-      </ul>
-    </nav>
+  
+    <nav th:replace="fragments/base.html :: navbar"></nav>
 
-   <header>
-    <h2>Museo di Roma 
-    <img src="img/roma-stemma.png" alt="roma-capitale" height="53px" width="40px">
-    </h2> 
-   </header>
-
+    <header th:replace="fragments/base.html :: header"></header>
 
     <section id="nome">
       <h2>Nome Collezione</h2>
@@ -49,12 +34,12 @@
         <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
         <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
         <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-
       </ul>
       </div>
     </section>
    
-    <footer>Copyright &copy; 2021 Museo di Roma</footer>
+    <footer th:replace="fragments/base.html :: footer"></footer>
+    
   </body>
 
 </html>

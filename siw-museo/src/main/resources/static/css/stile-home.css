@@ -16,18 +16,15 @@ Header h1, h2{
 }
 
 nav{
-  Height:100px;
   Background-color: whitesmoke;
   Width:100%;
-  Top:26%;
-  Left:0;
-  Position:absolute;
+  margin-top:185px;
 }
 
 nav ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   overflow: hidden;
   background-color: whitesmoke;
 }
@@ -54,12 +51,8 @@ Body{
    Background-color:brown;
 }
 
-section{
-  margin: 0px 0px;
-  padding: 0px;
-}
-
 #dati{
+  margin-top:0px;
   margin-bottom:10px;
 }
 
@@ -68,16 +61,13 @@ section{
   display: flex;
   flex-direction:row;
   justify-content: space-between;
-  Height:500px;
   padding:20px;
-  Margin-top:30%;
+  Margin-top:10px;
+  margin-bottom:25px;
 }
 
-.div{
-  padding:5px;
-  Height:1800px;
-  width:100%;
-  border-radius:10px;
+div img{
+	margin-bottom:20px;
 }
 
 
@@ -95,3 +85,4 @@ footer{
 header, footer{
         width: 100%;       
     }
+
