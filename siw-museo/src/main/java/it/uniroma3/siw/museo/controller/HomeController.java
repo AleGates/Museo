@@ -12,5 +12,15 @@ public class HomeController {
 	public String showInfoPage (Model model) {
 		return "info";
 	}
+	
+	@RequestMapping(value = "/artisti", method = RequestMethod.GET) 
+	public String showArtistiPage (Model model) {
+		return "artisti";
+	}
+	
+	@RequestMapping(value = "/collezioni", method = RequestMethod.GET) 
+	public String showCollezioniPage (Model model) {
+		return "collezioni";
+	}
 
 }
