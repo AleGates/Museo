@@ -6,13 +6,15 @@
     <title>Museo di Roma</title>
     <link th:href="@{/css/stile-home.css}" rel="stylesheet">
   </head>
-
+  
   <body>
 
    <nav>
       <ul>
-        <li><a href="artista.html">Artisti</a></li>
-        <li><a href="collezioni.html">Collezioni</a></li>
+        <li><a th:href="@{/addOpera}">AddOpera</a></li>
+        <li><a th:href="@{/opere}" th:text="#{nav.opere}">Opere</a></li>
+        <li><a th:href="@{/artisti}" th:text="#{nav.art}">Artisti</a></li>
+        <li><a th:href="@{/collezioni}" th:text="#{nav.coll}">Collezioni</a></li>
         <li><a th:href="@{/info}" th:text="#{nav.info}">Informazioni</a></li>
       </ul>
     </nav> 

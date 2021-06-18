@@ -56,7 +56,7 @@ public class ArtistaController {
     }
     
     @RequestMapping(value = "/artista", method = RequestMethod.POST)
-    public String newOpera(@ModelAttribute("artista") Artista artista, 
+    public String newArtista(@ModelAttribute("artista") Artista artista, 
     									Model model, BindingResult bindingResult) {
     	this.artistaValidator.validate(artista, bindingResult);
         if (!bindingResult.hasErrors()) {

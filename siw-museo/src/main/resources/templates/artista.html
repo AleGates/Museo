@@ -16,11 +16,7 @@
       </ul>
     </nav>
 
-   <header>
-    <h2>Museo di Roma 
-    <img src="img/roma-stemma.png" alt="roma-capitale" height="53px" width="40px">
-    </h2> 
-   </header>
+	<header th:replace="fragments/base.html :: header"></header>
 
 
     <section id="nome">
@@ -82,7 +78,7 @@ Giotto superò la smaterializzazione dell'immagine, l'astrattismo propri dell'ar
              </div>
           </div>
     </section>
-    <footer>Copyright &copy; 2021 Museo di Roma</footer>
+	<footer th:replace="fragments/base.html :: footer"></footer>
   </body>
 
 </html>

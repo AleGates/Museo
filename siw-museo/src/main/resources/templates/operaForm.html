@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/base.html :: headerfiles(title=#{title='SIW'})"> </head>
+<head th:replace="fragments/base.html :: headerfiles(title='opera Form', nomecss='stile-operaForm.css')"> </head>
 <body>
-	<header th:replace="fragments/base.html :: intestazione"></header>
+	<header th:replace="fragments/base.html :: header"></header>
 	<div>
 		<h4>Inserisci i dati di una persona</h4>
 	</div>
-	<form th:action="@{admin/opera}" method="POST" th:object="${opera}">
+	<form th:action="@{/opera}" method="POST" th:object="${opera}">
 		<div th:if="${#fields.hasGlobalErrors()}">
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
-		</div>		
+		</div>
 		<div>
 			<div>
 				<span>Titolo:</span>
@@ -26,6 +26,6 @@
 			</div>
 		</div>
 	</form>
-	<footer th:replace="fragments/base.html :: fondo"></footer>
+	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>

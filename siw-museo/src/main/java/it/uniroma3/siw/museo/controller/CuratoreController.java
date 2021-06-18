@@ -46,7 +46,7 @@ public class CuratoreController {
     }
     
     @RequestMapping(value = "/curatore", method = RequestMethod.POST)
-    public String newOpera(@ModelAttribute("curatore") Curatore curatore, 
+    public String newCuratore(@ModelAttribute("curatore") Curatore curatore, 
     									Model model, BindingResult bindingResult) {
     	this.curatoreValidator.validate(curatore, bindingResult);
         if (!bindingResult.hasErrors()) {
