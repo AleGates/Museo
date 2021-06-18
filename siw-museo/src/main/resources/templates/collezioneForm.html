@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/base.html :: headerfiles(title=#{title.formCollezione})"> </head>
+<head th:replace="fragments/base.html :: headerfiles(#{title.formCollezione}, stile-collezioneForm.css)"> </head>
 <body>
-	<header th:replace="fragments/base.html :: intestazione"></header>
+    <nav th:replace="fragments/base.html :: navbar"></nav>
+	<header th:replace="fragments/base.html :: header"></header>
 	<div>
-		<h4>Inserisci i dati di una collezione</h4>
 	</div>
-	<form th:action="@{/admin/collezione}" method="POST" th:object="${collezione}">
+	<form th:action="@{/collezione}" method="POST" th:object="${collezione}">
+	<h2>Inserisci i dati di una collezione</h2>
 		<div th:if="${#fields.hasGlobalErrors()}">
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
 		</div>		
@@ -26,6 +27,6 @@
 			</div>
 		</div>
 	</form>
-	<footer th:replace="fragments/base.html :: fondo"></footer>
+	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>

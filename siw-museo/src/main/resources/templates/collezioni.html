@@ -3,6 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/base.html :: headerfiles(#{nav.coll}, stile-collezioni.css)"> </head>
 <body>
+    <nav th:replace="fragments/base.html :: navbar"></nav>
 	<header th:replace="fragments/base.html :: header"></header>
 	<div>
     	<h4 th:text="#{header.collezioni}">List of collections</h4>
@@ -13,6 +14,9 @@
 				   th:text="|${collezione.nome} ${collezione.descrizione}|">nome e descrizione collezione</a>
 			</li>
 		</ul>
+	</div>
+	<div>
+	<span><a th:href=@{/addCollezione}><button type="button" th:text="#{add.coll}">invio</button></a></span>
 	</div>
 	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>

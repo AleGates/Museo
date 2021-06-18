@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import it.uniroma3.siw.museo.model.Opera;
 
+@Repository
 public interface OperaRepository extends CrudRepository<Opera, Long> {
 
 	public List<Opera> findByTitolo(String titolo);
