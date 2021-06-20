@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.uniroma3.siw.museo.controller.validator.CollezioneValidator;
 import it.uniroma3.siw.museo.model.Collezione;
+import it.uniroma3.siw.museo.model.Curatore;
 import it.uniroma3.siw.museo.service.CollezioneService;
 //vanno aggiunti metodi di: aggiunta/rimozione opere e curatori nella collezione corrente
 //va veriricato il funzionamento di deleteCollezione (specie il path e il return)
@@ -26,11 +27,11 @@ public class CollezioneController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     
 
-    @RequestMapping(value="/addCollezione", method = RequestMethod.GET)
+    @RequestMapping(value="/admin/creaCollezione", method = RequestMethod.GET)
     public String addCollezione(Model model) {
     	logger.debug("addCollezione");
     	model.addAttribute("collezione", new Collezione());
-        return "collezioneForm.html"; //ancora non esiste
+        return "/admin/collezioneForm.html"; //ancora non esiste
     }
 
     @RequestMapping(value = "/collezione/{id}", method = RequestMethod.GET)
@@ -39,27 +40,27 @@ public class CollezioneController {
     	return "collezione.html"; 
     }
 
-    @RequestMapping(value = "/collezione", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/collezione", method = RequestMethod.GET)
     public String getCollezioni(Model model) {
     		model.addAttribute("collezioni", this.collezioneService.tutti());
-    		return "collezioni.html";//ancora non esiste
+    		return "/admin/collezioni.html";//ancora non esiste
     }
     
-    @RequestMapping(value = "/collezione", method = RequestMethod.POST)
-    public String newCollezione(@ModelAttribute("collezione") Collezione collezione, 
+    @RequestMapping(value = "/admin/collezione", method = RequestMethod.POST)
+    public String newCollezione(@ModelAttribute("collezione") Collezione collezione,Curatore curatore,  
     									Model model, BindingResult bindingResult) {
     	this.collezioneValidator.validate(collezione, bindingResult);
         if (!bindingResult.hasErrors()) {
-        	this.collezioneService.inserisci(collezione);
+        	this.collezioneService.inserisci(collezione, curatore);
             model.addAttribute("collezioni", this.collezioneService.tutti());
-            return "collezioni.html";//ancora non esiste
+            return "/admin/collezioni.html";//ancora non esiste
         }
-        return "collezioneForm.html";//ancora non esiste
+        return "redirect: /admin/collezioneForm.html";//ancora non esiste
     }
     
-	@RequestMapping(value = {"/collezione/{id}/delete"}, method = RequestMethod.POST)
+	@RequestMapping(value = {"/admin/collezione/{id}/delete"}, method = RequestMethod.POST)
 	public String deleteCollezione(@PathVariable Long id, Model model) {
 		this.collezioneService.deleteCollezioneById(id);
-		return "collezioni.html";//ancora non esiste
+		return "redirect: /admin/collezioni.html";
 	}
 }

@@ -1,7 +1,6 @@
 package it.uniroma3.siw.museo.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.uniroma3.siw.museo.controller.validator.OperaValidator;
 import it.uniroma3.siw.museo.model.Opera;
+import it.uniroma3.siw.museo.service.ArtistaService;
 import it.uniroma3.siw.museo.service.OperaService;
 
 //vanno aggiunti metodi di: aggiunta di artista nell'opera corrente
@@ -24,14 +24,16 @@ public class OperaController {
     @Autowired
     private OperaValidator operaValidator;
     
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    @Autowired
+    private ArtistaService artistaService;
+    
     
 
-    @RequestMapping(value="/addOpera", method = RequestMethod.GET)
+    @RequestMapping(value="/admin/creaOpera", method = RequestMethod.GET)
     public String addOpera(Model model) {
-    	logger.debug("addOpera");
     	model.addAttribute("opera", new Opera());
-        return "operaForm.html"; //ancora non esiste
+    	model.addAttribute("artisti", this.artistaService.tutti());
+        return "/admin/operaForm.html"; 
     }
 
     @RequestMapping(value = "/opera/{id}", method = RequestMethod.GET)
@@ -40,27 +42,27 @@ public class OperaController {
     	return "opera.html"; 
     }
 
-    @RequestMapping(value = "/opera", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/opere", method = RequestMethod.GET)
     public String getOpere(Model model) {
     		model.addAttribute("opere", this.operaService.tutti());
-    		return "opere.html";//ancora non esiste
+    		return "/admin/opere.html";
     }
     
-    @RequestMapping(value = "/opera", method = RequestMethod.POST)
+    @RequestMapping(value = "/admin/opera", method = RequestMethod.POST)
     public String newOpera(@ModelAttribute("opera") Opera opera, 
     									Model model, BindingResult bindingResult) {
     	this.operaValidator.validate(opera, bindingResult);
         if (!bindingResult.hasErrors()) {
         	this.operaService.inserisci(opera);
             model.addAttribute("opere", this.operaService.tutti());
-            return "opere.html";//ancora non esiste
+            return "redirect: /admin/opere.html";
         }
-        return "operaForm.html";//ancora non esiste
+        return "/admin/operaForm.html";
     }
     
-	@RequestMapping(value = {"/opera/{id}/delete"}, method = RequestMethod.POST)
-	public String deleteOpera(@PathVariable Long id, Model model) {
+	@RequestMapping(value = {"/admin/opera/{id}/delete"}, method = RequestMethod.POST)
+	public String deleteOpera(@PathVariable("id") Long id, Model model) {
 		this.operaService.deleteOperaById(id);
-		return "opere.html";//ancora non esiste
+		return "redirect: /admin/opere.html";
 	}
 }
