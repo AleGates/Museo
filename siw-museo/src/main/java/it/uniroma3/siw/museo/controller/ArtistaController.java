@@ -3,6 +3,7 @@ package it.uniroma3.siw.museo.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,6 +16,7 @@ import it.uniroma3.siw.museo.model.Artista;
 import it.uniroma3.siw.museo.service.ArtistaService;
 
 //da verificare se serve getArtistaPerNomeECognome
+@Controller
 public class ArtistaController {
 	
 	@Autowired
@@ -56,7 +58,7 @@ public class ArtistaController {
     }
     
     @RequestMapping(value = "/artista", method = RequestMethod.POST)
-    public String newOpera(@ModelAttribute("artista") Artista artista, 
+    public String newArtista(@ModelAttribute("artista") Artista artista, 
     									Model model, BindingResult bindingResult) {
     	this.artistaValidator.validate(artista, bindingResult);
         if (!bindingResult.hasErrors()) {

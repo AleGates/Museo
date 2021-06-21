@@ -1,8 +1,7 @@
 package it.uniroma3.siw.museo.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,6 +15,7 @@ import it.uniroma3.siw.museo.service.OperaService;
 
 //vanno aggiunti metodi di: aggiunta di artista nell'opera corrente
 //va veriricato il funzionamento di deleteOpera (specie il path e il return)
+@Controller
 public class OperaController {
 	
 	@Autowired
@@ -23,16 +23,13 @@ public class OperaController {
 	
     @Autowired
     private OperaValidator operaValidator;
-    
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
-    
 
     @RequestMapping(value="/addOpera", method = RequestMethod.GET)
     public String addOpera(Model model) {
-    	logger.debug("addOpera");
     	model.addAttribute("opera", new Opera());
-        return "operaForm.html"; //ancora non esiste
+        return "operaForm";
     }
+    
 
     @RequestMapping(value = "/opera/{id}", method = RequestMethod.GET)
     public String getOpera(@PathVariable("id") Long id, Model model) {
@@ -40,7 +37,7 @@ public class OperaController {
     	return "opera.html"; 
     }
 
-    @RequestMapping(value = "/opera", method = RequestMethod.GET)
+    @RequestMapping(value = "/opere", method = RequestMethod.GET)
     public String getOpere(Model model) {
     		model.addAttribute("opere", this.operaService.tutti());
     		return "opere.html";//ancora non esiste
@@ -57,7 +54,7 @@ public class OperaController {
         }
         return "operaForm.html";//ancora non esiste
     }
-    
+
 	@RequestMapping(value = {"/opera/{id}/delete"}, method = RequestMethod.POST)
 	public String deleteOpera(@PathVariable Long id, Model model) {
 		this.operaService.deleteOperaById(id);

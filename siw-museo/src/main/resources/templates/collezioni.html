@@ -1,9 +1,10 @@
   
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/base.html :: headerfiles(title='SIW')"> </head>
+<head th:replace="fragments/base.html :: headerfiles(#{nav.coll}, stile-collezioni.css)"> </head>
 <body>
-	<header th:replace="fragments/base.html :: intestazione"></header>
+    <nav th:replace="fragments/base.html :: navbar"></nav>
+	<header th:replace="fragments/base.html :: header"></header>
 	<div>
     	<h4 th:text="#{header.collezioni}">List of collections</h4>
 		<ul>
@@ -14,6 +15,9 @@
 			</li>
 		</ul>
 	</div>
-	<footer th:replace="fragments/base.html :: fondo"></footer>
+	<div>
+	<span><a th:href=@{/addCollezione}><button type="button" th:text="#{add.coll}">invio</button></a></span>
+	</div>
+	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>

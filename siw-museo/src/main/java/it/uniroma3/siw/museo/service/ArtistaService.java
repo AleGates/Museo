@@ -6,10 +6,12 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import it.uniroma3.siw.museo.model.Artista;
 import it.uniroma3.siw.museo.repository.ArtistaRepository;
 
+@Service
 public class ArtistaService {
 
 	@Autowired
