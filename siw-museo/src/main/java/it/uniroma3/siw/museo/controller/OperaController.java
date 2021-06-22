@@ -60,8 +60,15 @@ public class OperaController {
         return "/admin/operaForm.html";
     }
     
-	@RequestMapping(value = {"/admin/opera/{id}/delete"}, method = RequestMethod.POST)
-	public String deleteOpera(@PathVariable("id") Long id, Model model) {
+    //da verificare
+    @RequestMapping(value= "/admin/opera/{id}/delete", method=RequestMethod.GET)
+    public String deleteOpera(Model model) {
+    	model.addAttribute("opera", this.operaService.tutti());
+    	return "/admin/opere.html";
+    }
+    //da verificare
+	@RequestMapping(value = "/admin/opera/{id}/delete", method = RequestMethod.POST)
+	public String deleteOperaPost(@PathVariable("id") Long id, Model model) {
 		this.operaService.deleteOperaById(id);
 		return "redirect: /admin/opere.html";
 	}

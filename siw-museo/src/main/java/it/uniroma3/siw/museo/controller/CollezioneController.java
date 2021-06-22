@@ -40,7 +40,7 @@ public class CollezioneController {
     	return "collezione.html"; 
     }
 
-    @RequestMapping(value = "/admin/collezione", method = RequestMethod.GET)
+    @RequestMapping(value = "/collezione", method = RequestMethod.GET)
     public String getCollezioni(Model model) {
     		model.addAttribute("collezioni", this.collezioneService.tutti());
     		return "/admin/collezioni.html";//ancora non esiste
