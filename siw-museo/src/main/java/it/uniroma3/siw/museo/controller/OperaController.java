@@ -50,14 +50,21 @@ public class OperaController {
         if (!bindingResult.hasErrors()) {
         	this.operaService.inserisci(opera);
             model.addAttribute("opere", this.operaService.tutti());
-            return "opere.html";//ancora non esiste
+            return "opere.html";
         }
-        return "operaForm.html";//ancora non esiste
+        return "operaForm.html";
     }
 
-	@RequestMapping(value = {"/opera/{id}/delete"}, method = RequestMethod.POST)
+    
+    @RequestMapping(value= "/opera/{id}/delete", method= RequestMethod.GET)
+    public String deleteOpera(Model model) {
+    	model.addAttribute("opere", this.operaService.tutti());
+    	return "opere.html";
+    }
+    
+	@RequestMapping(value = "/opera/{id}/delete", method = RequestMethod.POST)
 	public String deleteOpera(@PathVariable Long id, Model model) {
 		this.operaService.deleteOperaById(id);
-		return "opere.html";//ancora non esiste
+		return "opere.html";
 	}
 }

@@ -1,0 +1,30 @@
+		<!DOCTYPE html>
+		<html xmlns:th="http://www.thymeleaf.org">
+		<head th:replace="fragments/base.html :: headerfiles(title='Login', nomecss='base.css')"> 
+		</head>
+		<body>
+			<header th:replace="fragments/base.html :: header"></header>
+			<div class="containerLogin">
+			<div>
+				<h4>Login</h4>
+			</div>
+			<form th:action="@{/login}" method="POST">
+				<div>
+					<div>
+						<span>Username:</span>
+						<span><input name="username" type="text" required /></span>
+					</div>		
+					<div>
+						<span>Password:</span>
+						<span><input name="password" type="password" required /></span>
+					</div>
+					<div>
+						<span><button type="submit">Login</button></span>
+					</div>
+					
+				</div>
+			</form>
+			</div>
+			<footer th:replace="fragments/base.html :: footer(home='/')"></footer>
+		</body>
+		</html>
