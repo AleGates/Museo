@@ -54,14 +54,21 @@ public class CollezioneController {
         if (!bindingResult.hasErrors()) {
         	this.collezioneService.inserisci(collezione);
             model.addAttribute("collezioni", this.collezioneService.tutti());
-            return "collezioni.html";//ancora non esiste
+            return "collezioni.html";
         }
-        return "collezioneForm.html";//ancora non esiste
+        return "collezioneForm.html";
     }
     
-	@RequestMapping(value = {"/collezione/{id}/delete"}, method = RequestMethod.POST)
+    @RequestMapping(value= "/collezione/{id}/delete", method= RequestMethod.GET)
+    public String deleteCollezione(Model model) {
+    	model.addAttribute("collezioni", this.collezioneService.tutti());
+    	return "collezioni.html";
+    }
+    
+    
+	@RequestMapping(value = "/collezione/{id}/delete", method = RequestMethod.POST)
 	public String deleteCollezione(@PathVariable Long id, Model model) {
 		this.collezioneService.deleteCollezioneById(id);
-		return "collezioni.html";//ancora non esiste
+		return "collezioni.html";
 	}
 }

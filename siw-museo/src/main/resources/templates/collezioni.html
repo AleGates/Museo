@@ -11,7 +11,8 @@
 			<li th:each="collezione : ${collezioni}">
 				<a href="collezione.html" 
 				   th:href="@{'/collezione' + '/' + ${collezione.id}}" 
-				   th:text="|${collezione.nome} ${collezione.descrizione}|">nome e descrizione collezione</a>
+				   th:text="${collezione.nome}">nome</a>
+				   <div th:text=" ${collezione.descrizione}"> descrizione collezione</div>
 			</li>
 		</ul>
 	</div>

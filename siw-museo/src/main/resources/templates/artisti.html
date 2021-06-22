@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/base.html :: headerfiles(#{nav.art}, stile-artisti.css)"> </head>
+<head th:replace="fragments/base.html :: headerfiles(#{nav.coll}, stile-collezioni.css)"> </head>
 <body>
+    <nav th:replace="fragments/base.html :: navbar"></nav>
 	<header th:replace="fragments/base.html :: header"></header>
 	<div>
     	<h4 th:text="#{header.artisti}">List of artists</h4>
