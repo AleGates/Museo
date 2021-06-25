@@ -66,5 +66,10 @@ button{
 }
 
 footer{
-	height:0px;
+	height:20px;
+	width:100%;
+	background-color: black;
+	bottom:0px;
+	left:0px;
+	position:absolute;
 }
