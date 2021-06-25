@@ -1,7 +1,5 @@
 package it.uniroma3.siw.museo.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,16 +21,12 @@ public class CollezioneController {
 	private CollezioneService collezioneService;
 	
     @Autowired
-    private CollezioneValidator collezioneValidator; 
-    
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
-    
+    private CollezioneValidator collezioneValidator;     
 
-    @RequestMapping(value="/addCollezione", method = RequestMethod.GET)
+    @RequestMapping(value="/admin/addCollezione", method = RequestMethod.GET)
     public String addCollezione(Model model) {
-    	logger.debug("addCollezione");
     	model.addAttribute("collezione", new Collezione());
-        return "collezioneForm.html"; //ancora non esiste
+        return "collezioneForm.html";
     }
 
     @RequestMapping(value = "/collezione/{id}", method = RequestMethod.GET)
@@ -44,10 +38,10 @@ public class CollezioneController {
     @RequestMapping(value = "/collezioni", method = RequestMethod.GET)
     public String getCollezioni(Model model) {
     		model.addAttribute("collezioni", this.collezioneService.tutti());
-    		return "collezioni.html";//ancora non esiste
+    		return "collezioni.html";
     }
     
-    @RequestMapping(value = "/collezione", method = RequestMethod.POST)
+    @RequestMapping(value = "/admin/collezione", method = RequestMethod.POST)
     public String newCollezione(@ModelAttribute("collezione") Collezione collezione, 
     									Model model, BindingResult bindingResult) {
     	this.collezioneValidator.validate(collezione, bindingResult);

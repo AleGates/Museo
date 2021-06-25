@@ -1,8 +1,9 @@
 		<!DOCTYPE html>
 		<html xmlns:th="http://www.thymeleaf.org">
-		<head th:replace="fragments/base.html :: headerfiles(title='Login', nomecss='base.css')"> 
+		<head th:replace="fragments/base.html :: headerfiles(title='Login', nomecss='stile-login.css')"> 
 		</head>
 		<body>
+		    <nav th:replace="fragments/base.html :: navbar"></nav>
 			<header th:replace="fragments/base.html :: header"></header>
 			<div class="containerLogin">
 			<div>
@@ -25,6 +26,6 @@
 				</div>
 			</form>
 			</div>
-			<footer th:replace="fragments/base.html :: footer(home='/')"></footer>
+			<footer th:replace="fragments/base.html :: footer"></footer>
 		</body>
 		</html>

@@ -15,6 +15,15 @@ Header h1, h2{
    Margin-top:0px;
 }
 
+input{
+	top: 10px;
+	right:30px;
+	height:50px;
+	width:50px;
+	position: absolute;
+    border: thick double rgb(89, 53, 118);
+}
+
 nav{
   Background-color: whitesmoke;
   Width:100%;

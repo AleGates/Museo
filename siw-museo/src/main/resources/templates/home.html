@@ -11,7 +11,8 @@
 
    <nav>
       <ul>
-      	<li><a th:href="@{/login}" th:text= "#{nav.login}">Login</a></li>
+       <!-- <li><a th:href="@{/register}">REGISTRATI</a></li>  -->
+      	<!--  <li><a th:href="@{/login}" th:text= "#{nav.login}">Login</a></li> -->
         <li><a th:href="@{/opere}" th:text="#{nav.opere}">Opere</a></li>
         <li><a th:href="@{/artisti}" th:text="#{nav.art}">Artisti</a></li>
         <li><a th:href="@{/collezioni}" th:text="#{nav.coll}">Collezioni</a></li>
@@ -22,7 +23,11 @@
    <header>
     <h1>Museo di Roma 
     <img src="images/roma-stemma.png" alt="roma-capitale" height="53px" width="40px">
+    <a th:href="@{/login}">
+    <input type="image" id="image" alt="Login" src="/images/userLogin.jpg">
+    </a>
     </h1>
+    
    </header>
  
     <section id="dati">
