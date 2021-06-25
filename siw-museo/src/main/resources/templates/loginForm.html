@@ -1,8 +1,12 @@
 		<!DOCTYPE html>
 		<html xmlns:th="http://www.thymeleaf.org">
-		<head th:replace="fragments/base.html :: headerfiles(title='Login', nomecss='stile-login.css')"> 
+		<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta charset="UTF-8" />
+	    <link th:href="@{/css/stile-login.css}" rel="stylesheet">
+	    <title th:text="Login"></title>
 		</head>
-		<body>
+	<!--	<body>
 		    <nav th:replace="fragments/base.html :: navbar"></nav>
 			<header th:replace="fragments/base.html :: header"></header>
 			<div class="containerLogin">
@@ -27,5 +31,31 @@
 			</form>
 			</div>
 			<footer th:replace="fragments/base.html :: footer"></footer>
+		</body>-->
+		<body>
+		<div class="containerLogin">
+			<div>
+			<form th:action="@{/login}" method="POST">
+			    <div>
+				<h1>Login</h1>
+			    </div>
+				<div id="centrato">
+					<div>
+						<h2>Username:</h2>
+						<span><input name="username" type="text" required /></span>
+					</div>		
+					<div>
+						<h2>Password:</h2>
+						<span><input name="password" type="password" required /></span>
+					</div>
+					<div>
+						<span><button type="submit">Login</button></span>
+					</div>
+					
+				</div>
+			</form>
+			</div>
+		
 		</body>
+		<footer>CIAO</footer>
 		</html>

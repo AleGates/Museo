@@ -1,0 +1,75 @@
+body{
+	background-image: url(/images/login.jpg);
+	background-size: cover;
+	background-color:rgb(5, 19, 60);
+	text-align: center;
+}
+
+form h1{
+  padding-top:30px;
+  padding-bottom:30px;
+  width:600px;
+  color: rgb(214, 177, 58);;
+  border-bottom:3px solid rgb(214, 177, 58, 0.5);
+  background-color: rgb(0, 0, 0, 0.4);
+  border-radius: 40px;
+  transition:all 1s; /*Per gestire il movimento in ingresso*/
+	
+}
+
+form{
+   margin-left:auto;
+   margin-right:auto;
+   width:600px;
+   height:500px;
+   margin-top:80px;
+   background-color:rgb(179, 218, 255, 0.4);
+   border-radius: 40px;
+   
+   /*Per gestire le ombre. STANDARD:da sinistra a destra CON IL MENO: da destra a sinistra*/
+   box-shadow:   10px  10px 5px rgb(214, 177, 58, 0.5),
+                -10px -10px 5px rgb(214, 177, 58, 0.5),
+                 10px -10px 5px rgb(214, 177, 58, 0.5),
+                -10px  10px 5px rgb(214, 177, 58, 0.5);
+}
+
+input{
+  width:90%;
+  padding:10px;
+  font-family:'Montserrat', sans-serif;
+  transition:all 1s;
+  border-bottom: 2px solid rgb(214, 177, 58);;
+  margin-bottom:45px;
+}
+
+h2{
+	color: rgb(214, 177, 58);
+	font-size: 25px;
+	background-color: rgb(0, 0, 0, 0.4);
+	
+}
+
+button{
+  float:center;
+  padding:8px 100px;
+  margin:8px 0 0;
+  font-family:'Montserrat',sans-serif;
+  border:2px solid rgb(214, 177, 58);
+  color: rgb(214, 177, 58);
+  background-color: rgb(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 1s;
+}
+
+#centrato{
+	padding-top: 0px;
+}
+
+footer{
+	height:20px;
+	width:100%;
+	background-color: black;
+	bottom:0px;
+	left:0px;
+	position:absolute;
+}
