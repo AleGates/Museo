@@ -1,5 +1,5 @@
 body{
-	background-image: url(/images/login.jpg);
+	background-image: url(/images/log.jpg);
 	background-size: cover;
 	background-color:rgb(5, 19, 60);
 	text-align: center;
@@ -9,9 +9,9 @@ form h1{
   padding-top:30px;
   padding-bottom:30px;
   width:600px;
-  color: rgb(214, 177, 58);;
-  border-bottom:3px solid rgb(214, 177, 58, 0.5);
-  background-color: rgb(0, 0, 0, 0.4);
+  color: rgb(151, 52, 47);
+  border-bottom:3px solid rgb(151, 52, 47, 0.5);
+  background-color: rgb(245, 250, 211, 0.6);
   border-radius: 40px;
   transition:all 1s; /*Per gestire il movimento in ingresso*/
 	
@@ -27,10 +27,10 @@ form{
    border-radius: 40px;
    
    /*Per gestire le ombre. STANDARD:da sinistra a destra CON IL MENO: da destra a sinistra*/
-   box-shadow:   10px  10px 5px rgb(214, 177, 58, 0.5),
-                -10px -10px 5px rgb(214, 177, 58, 0.5),
-                 10px -10px 5px rgb(214, 177, 58, 0.5),
-                -10px  10px 5px rgb(214, 177, 58, 0.5);
+   box-shadow:   10px  10px 5px rgb(151, 52, 47, 0.5),
+                -10px -10px 5px rgb(151, 52, 47, 0.5),
+                 10px -10px 5px rgb(151, 52, 47, 0.5),
+                -10px  10px 5px rgb(151, 52, 47, 0.5);
 }
 
 input{
@@ -38,14 +38,14 @@ input{
   padding:10px;
   font-family:'Montserrat', sans-serif;
   transition:all 1s;
-  border-bottom: 2px solid rgb(214, 177, 58);;
-  margin-bottom:45px;
+  border-bottom: 2px solid rgb(151, 52, 47);
+  margin-bottom: 45px;
 }
 
 h2{
-	color: rgb(214, 177, 58);
+	color: rgb(151, 52, 47);
 	font-size: 25px;
-	background-color: rgb(0, 0, 0, 0.4);
+	background-color: rgb(245, 250, 211, 0.6);
 	
 }
 
@@ -54,9 +54,9 @@ button{
   padding:8px 100px;
   margin:8px 0 0;
   font-family:'Montserrat',sans-serif;
-  border:2px solid rgb(214, 177, 58);
-  color: rgb(214, 177, 58);
-  background-color: rgb(0, 0, 0, 0.2);
+  border:2px solid rgb(151, 52, 47);
+  color: rgb(151, 52, 47);
+  background-color: rgb(245, 250, 211, 0.8);
   cursor: pointer;
   transition: all 1s;
 }
