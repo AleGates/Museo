@@ -111,9 +111,15 @@ footer{
   width: 100%;
   position: fixed;
 }
+
+#login{
+	color: brown;
+	position:absolute;
+	top: 10px;
+	right: 20px;
+}
 	</style>
 </head>
-
 <body>
     <nav th:fragment="navbar">
       <ul>
@@ -121,8 +127,11 @@ footer{
         <li><a th:href="@{/artisti}" th:text="#{nav.art}">Artisti</a></li>
         <li><a th:href="@{/collezioni}" th:text="#{nav.coll}">Collezioni</a></li>
         <li><a th:href="@{/info}" th:text="#{nav.info}">Informazioni</a></li>
+            <a id="login" th:href="@{/login}">Login</a>
       </ul>
     </nav>
+
+    
     
     <header th:fragment="header">
      <h2>Museo di Roma 

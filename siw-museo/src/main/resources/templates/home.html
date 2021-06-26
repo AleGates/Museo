@@ -23,9 +23,11 @@
    <header>
     <h1>Museo di Roma 
     <img src="images/roma-stemma.png" alt="roma-capitale" height="53px" width="40px">
+    <section sec:authorize="isAnonymous()">
     <a th:href="@{/login}">
     <input type="image" id="image" alt="Login" src="/images/userLogin.jpg">
     </a>
+    </section>
     </h1>
     
    </header>
