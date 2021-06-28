@@ -5,7 +5,7 @@
 <body>
     <nav th:replace="fragments/base.html :: navbar"></nav>
 	<header th:replace="fragments/base.html :: header"></header>
-	<div>
+	<section>
     	<h4 th:text="#{header.collezioni}">List of collections</h4>
 		<ul>
 			<li th:each="collezione : ${collezioni}">
@@ -15,7 +15,7 @@
 				   <div th:text=" ${collezione.descrizione}"> descrizione collezione</div>
 			</li>
 		</ul>
-	</div>
+	</section>
 	<div>
 	<span><a th:href=@{/addCollezione}><button type="button" th:text="#{add.coll}">invio</button></a></span>
 	</div>

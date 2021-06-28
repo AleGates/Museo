@@ -1,8 +1,3 @@
-div{
-   background-color: white;;
-   border: 1mm solid black;
-}
-
 iframe{
 
 }
@@ -13,10 +8,11 @@ iframe{
   flex-direction: row;
   justify-content: space-between;
   padding: 20px;
-  Margin-top: 0px;
+  Margin-top: 20px;
 }
 
 .col{
+  border: 1mm solid black;
   background-color: white;
   padding: 5px;
   width: 44%;
@@ -33,9 +29,6 @@ iframe{
 }
 
 
-span{
-  background-color:white;
-}
 
 h1{
    text-align:center;
