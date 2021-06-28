@@ -4,8 +4,9 @@
 	th:replace="fragments/base.html :: headerfiles(#{nav.opere}, opere-stile.css)">
 </head>
 <body>
+    <nav th:replace="fragments/base.html :: navbar"></nav>
 	<header th:replace="fragments/base.html :: header"></header>
-	<div>
+	<section>
 		<h4 th:text="#{header.opere}">List of opere</h4>
 		<ul>
 			<li th:each="opera : ${opere}"><a href="opera.html"
@@ -13,7 +14,7 @@
 
 				<div th:text="${opera.anno}">anno</div></li>
 		</ul>
-	</div>
+	</section>
 	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>
