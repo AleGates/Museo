@@ -1,20 +1,12 @@
-  <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>Museo di Roma</title>
-    <link href="/stile-artista.css" rel="stylesheet"> 
-  </head>
+  <!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head
+	th:replace="fragments/base.html :: headerfiles(#{title.artista}, stile-artista.css)"></head>
 
   <body>
-    <nav>
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="news.asp">Autori</a></li>
-        <li><a href="contact.asp">Collezioni</a></li>
-        <li><a href="about.asp">Informazioni</a></li>
-      </ul>
-    </nav>
+    <nav th:replace="fragments/base.html :: navbar"></nav>
 
 	<header th:replace="fragments/base.html :: header"></header>
 
@@ -26,58 +18,39 @@
     <section id="dati">
       <div id="flex-container">
         <div class="col" id="small">
-          <ul>
-            <li>Data di nascita: 21/10/1999</li>
-            <li>Luogo di nascita: Roma</li>
-            <li>Data di morte: \\ </li>
-            <li>Nazionalit√†: Italia</li>
+      <ul>
+       		<li th:text="${artista.dataNascita}">Data di Nascita</li>
+			<li th:text="${artista.luogoNascita}">Luogo di Nascita</a></li>
+			<li th:text="${artista.nazionalita}">Nazionalita</a></li>
+			<li th:text="${artista.dataMorte}">Data Morte</a></li>
+			<li th:text="${artista.luogoMorte}">Luogo Morte</a></li>
+      </ul>
         </div>
         <div class="col"> 
           <h5>BIOGRAFIA:</h5>
           <p>
-Secondo la maggioranza degli esperti, Giotto nacque nel 1267, a Vicchio. Tale ricostruzione si basa sulla verseggiatura che Pucci fece della Cronica di Giovanni Villani ed √® piuttosto attendibile, salvo spostare la data di uno o due anni. Una minoranza della critica tende a porre la sua data di nascita nel 1276, secondo la cronologia che nella seconda met√† del XVI secolo offr√¨ Vasari nella biografia dedicata all'artista. La data fornita da Vasari sarebbe inattendibile qualora si tenga per assodato che Giotto doveva essere almeno ventenne attorno al 1290, quando dipinse le sue prime opere.
-Nacque a Colle di Vespignano, in quello che attualmente √® il comune di Vicchio nel Mugello, da una famiglia di piccoli possidenti terrieri (Bondone era appunto il padre)[5], famiglia che, come molte altre, si trasfer√¨ solo in seguito a Firenze. Secondo la tradizione letteraria, finora non confermata dai documenti, Giotto era stato affidato dai genitori alla bottega di Cimabue.
-I primi anni del pittore sono stati oggetto di credenze quasi leggendarie fin da quando egli era in vita. Giorgio Vasari racconta come Giotto fosse capace di disegnare una perfetta circonferenza senza bisogno del compasso, la famosa "O" di Giotto. Si narra inoltre che Cimabue avesse scoperto la bravura di Giotto mentre disegnava delle pecore con del carbone su un sasso, aneddoto riportato da Lorenzo Ghiberti e da Giorgio Vasari. Altrettanto leggendario √® l'episodio di uno scherzo fatto da Giotto a Cimabue dipingendo su una tavola una mosca: essa sarebbe stata cos√¨ realistica che Cimabue tornando a lavorare sulla tavola avrebbe cercato di scacciarla. Le novelle raccontano verosimilmente soprattutto la grande capacit√† tecnica e la naturalezza dell'arte di Giotto.
-Giotto si spos√≤ verso il 1287 con Ciuta (Ricevuta) di Lapo del Pela. La coppia ebbe quattro figlie e quattro figli, dei quali uno, Francesco, divenne a sua volta pittore. Giotto s'adoper√≤ perch√© un altro dei suoi figli, di nome anch'egli Francesco, divenisse priore della chiesa di San Martino a Vespignano, oltre che suo procuratore in Mugello, dove allarg√≤ le propriet√† terriere della famiglia. Dette poi in sposa ben tre delle sue figlie con uomini nei dintorni del colle mugellano, segno inequivocabile di una sua fortissima "mugellanit√†" e dei profondi legami mantenuti dal pittore per tutta la vita col suo territorio d'origine. Recenti studi indicano come una dalle sue prime opere il frammento della Madonna conservato proprio in Mugello nella Pieve di Borgo San Lorenzo, databile intorno al 1290. La prima volta che Giotto venne ufficialmente nominato √® in un documento recante la data 1309, nel quale si registra che Palmerino di Guido restituisce in Assisi un prestito a nome suo e del pittore.
-Giotto aveva aperto una bottega dove era circondato da alunni; si occupava soprattutto di progettare le opere e di impostare le composizioni pi√π importanti mentre agli alunni lasciava quelle secondarie.
-Giotto super√≤ la smaterializzazione dell'immagine, l'astrattismo propri dell'arte bizantina, si riappropri√≤ magistralmente della realt√† naturale di cui fu grande narratore, abile nell'organizzare le scene con realismo e nel creare gruppi di figure che dialogano fra di loro, inserite in uno spazio di cui egli ebbe grande padronanza aprendosi alla terza dimensione, cio√® la profondit√†. Il naturalismo giottesco fa s√¨ che i personaggi siano sempre caratterizzati da notevole espressivit√† di sentimenti e stati d'animo, in una rappresentazione della figura umana resa con plasticit√†, con solido accento scultoreo. Giotto compie una profonda indagine dell'emozione umana, resa sempre con vivace realismo.
+Secondo la maggioranza degli esperti, Giotto nacque nel 1267, a Vicchio. Tale ricostruzione si basa sulla verseggiatura che Pucci fece della Cronica di Giovanni Villani ed Ë piuttosto attendibile, salvo spostare la data di uno o due anni. Una minoranza della critica tende a porre la sua data di nascita nel 1276, secondo la cronologia che nella seconda met‡ del XVI secolo offrÏ Vasari nella biografia dedicata all'artista. La data fornita da Vasari sarebbe inattendibile qualora si tenga per assodato che Giotto doveva essere almeno ventenne attorno al 1290, quando dipinse le sue prime opere.
+Nacque a Colle di Vespignano, in quello che attualmente Ë il comune di Vicchio nel Mugello, da una famiglia di piccoli possidenti terrieri (Bondone era appunto il padre)[5], famiglia che, come molte altre, si trasferÏ solo in seguito a Firenze. Secondo la tradizione letteraria, finora non confermata dai documenti, Giotto era stato affidato dai genitori alla bottega di Cimabue.
+I primi anni del pittore sono stati oggetto di credenze quasi leggendarie fin da quando egli era in vita. Giorgio Vasari racconta come Giotto fosse capace di disegnare una perfetta circonferenza senza bisogno del compasso, la famosa "O" di Giotto. Si narra inoltre che Cimabue avesse scoperto la bravura di Giotto mentre disegnava delle pecore con del carbone su un sasso, aneddoto riportato da Lorenzo Ghiberti e da Giorgio Vasari. Altrettanto leggendario Ë l'episodio di uno scherzo fatto da Giotto a Cimabue dipingendo su una tavola una mosca: essa sarebbe stata cosÏ realistica che Cimabue tornando a lavorare sulla tavola avrebbe cercato di scacciarla. Le novelle raccontano verosimilmente soprattutto la grande capacit‡ tecnica e la naturalezza dell'arte di Giotto.
+Giotto si sposÚ verso il 1287 con Ciuta (Ricevuta) di Lapo del Pela. La coppia ebbe quattro figlie e quattro figli, dei quali uno, Francesco, divenne a sua volta pittore. Giotto s'adoperÚ perchÈ un altro dei suoi figli, di nome anch'egli Francesco, divenisse priore della chiesa di San Martino a Vespignano, oltre che suo procuratore in Mugello, dove allargÚ le propriet‡ terriere della famiglia. Dette poi in sposa ben tre delle sue figlie con uomini nei dintorni del colle mugellano, segno inequivocabile di una sua fortissima "mugellanit‡" e dei profondi legami mantenuti dal pittore per tutta la vita col suo territorio d'origine. Recenti studi indicano come una dalle sue prime opere il frammento della Madonna conservato proprio in Mugello nella Pieve di Borgo San Lorenzo, databile intorno al 1290. La prima volta che Giotto venne ufficialmente nominato Ë in un documento recante la data 1309, nel quale si registra che Palmerino di Guido restituisce in Assisi un prestito a nome suo e del pittore.
+Giotto aveva aperto una bottega dove era circondato da alunni; si occupava soprattutto di progettare le opere e di impostare le composizioni pi˘ importanti mentre agli alunni lasciava quelle secondarie.
+Giotto superÚ la smaterializzazione dell'immagine, l'astrattismo propri dell'arte bizantina, si riappropriÚ magistralmente della realt‡ naturale di cui fu grande narratore, abile nell'organizzare le scene con realismo e nel creare gruppi di figure che dialogano fra di loro, inserite in uno spazio di cui egli ebbe grande padronanza aprendosi alla terza dimensione, cioË la profondit‡. Il naturalismo giottesco fa sÏ che i personaggi siano sempre caratterizzati da notevole espressivit‡ di sentimenti e stati d'animo, in una rappresentazione della figura umana resa con plasticit‡, con solido accento scultoreo. Giotto compie una profonda indagine dell'emozione umana, resa sempre con vivace realismo.
           </p> 
           </div>
       </div>
     </section>
-    <section id="opere">
-       <h1>Le opere</h1>
-          <div id="flex-container-opere">
-             <div class="opera">
-               <a href="opera.html"><h3>Giudizio universale</h3></a>
-               <img src="img/giudiziouniv.jpeg" alt="giudizio universale">
-             </div>
-             <div class="opera">
-               <a href="opera.html"><h3>Giudizio universale</h3></a>
-               <img src="img/giudiziouniv.jpeg" alt="giudizio universale">
-             </div> 
-             <div class="opera">
-               <a href="opera.html"><h3>Giudizio universale</h3></a>
-               <img src="img/giudiziouniv.jpeg" alt="giudizio universale">
-             </div> 
-             <div class="opera">
-               <a href="opera.html"><h3>Giudizio universale</h3></a>
-               <img src="img/giudiziouniv.jpeg" alt="giudizio universale">
-             </div> 
-             <div class="opera">
-               <a href="opera.html"><h3>Giudizio universale</h3></a>
-               <img src="img/giudiziouniv.jpeg" alt="giudizio universale">
-             </div>  
-             <div class="opera">
-               <a href="opera.html"><h3>Giudizio universale</h3></a>
-               <img src="img/giudiziouniv.jpeg" alt="giudizio universale">
-             </div>  
-             <div class="opera">
-               <a href="opera.html"><h3>Giudizio universale</h3></a>
-               <img src="img/giudiziouniv.jpeg" alt="giudizio universale">
-             </div>
-          </div>
-    </section>
+    <div>
+    	<h4 th:text="#{header.opere}">List of opere</h4>
+		<ul>
+			<li th:each="opera : ${opere}">
+				<a href="opera.html" 
+				   th:href="@{'/opera' + '/' + ${opera.id}}" 
+				   th:text="${opera.titolo}">titolo</a>
+				
+				   <div th:text="${opera.anno}">anno</div>
+			</li>
+		</ul>
+	</div>
 	<footer th:replace="fragments/base.html :: footer"></footer>
   </body>
 

@@ -1,45 +1,36 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head th:replace="fragments/base.html :: headerfiles(#{title.collezione}, stile-collezione.css)"></head>
-  
-  <body>
-  
-    <nav th:replace="fragments/base.html :: navbar"></nav>
 
-    <header th:replace="fragments/base.html :: header"></header>
 
-    <section id="nome">
-      <h2>Nome Collezione</h2>
-      </section>
-    
-    <section id="dati">
-      <div>
-      <span>A cura di NomeCuratore</span>
-      <h3>Le opere della Collezione</h3>
-      <ul>
-        <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-        <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-        <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-        <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-        <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-        <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-        <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-        <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-        <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-        <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-        <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-        <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-        <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-        <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-        <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-        <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-        <li>"<a href="opera.html">Il giudizio universale</a>" realizzata da <a href="artista.html">Giotto</a></li>
-      </ul>
-      </div>
-    </section>
-   
-    <footer th:replace="fragments/base.html :: footer"></footer>
-    
-  </body>
+<head
+	th:replace="fragments/base.html :: headerfiles(#{title.collezione}, stile-collezione.css)"></head>
+
+<body>
+
+	<nav th:replace="fragments/base.html :: navbar"></nav>
+
+	<header th:replace="fragments/base.html :: header"></header>
+
+	
+	<div th:text="${collezione.nome}">nome</div>
+	<div>A cura di</div>
+	
+	<div th:text="|${curatore.nome} ${curatore.cognome}|">Nome Cognome</div>
+	<div>
+		<h4 th:text="#{header.opere}">List of opere</h4>
+		<ul>
+			<li th:each="opera : ${opere}">
+			<a href="opera.html"
+				th:href="@{'/opera' + '/' + ${opera.id}}" th:text="${opera.titolo}">titolo</a>
+				<div>realizzata da</div>
+				<a href="artista.html"
+				th:href="@{'/artista' + '/' + ${artista.id}}"
+				 th:text="$|{artista.nome} ${artista.cognome}|">artista</a>
+		</ul>
+	</div>
+
+	<footer th:replace="fragments/base.html :: footer"></footer>
+
+</body>
 
 </html>
