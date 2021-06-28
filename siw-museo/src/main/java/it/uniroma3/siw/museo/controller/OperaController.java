@@ -27,7 +27,7 @@ public class OperaController {
     @RequestMapping(value="/admin/addOpera", method = RequestMethod.GET)
     public String addOpera(Model model) {
     	model.addAttribute("opera", new Opera());
-        return "operaForm";
+        return "admin/operaForm";
     }
     
 
@@ -53,7 +53,7 @@ public class OperaController {
             model.addAttribute("opere", this.operaService.tutti());
             return "opere.html";
         }
-        return "operaForm.html";
+        return "admin/operaForm.html";
     }
 
     

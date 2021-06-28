@@ -1,8 +1,9 @@
 !DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/base.html :: headerfiles(title=#{title='SIW'})"> </head>
+<head th:replace="fragments/base.html :: headerfiles(title='Artista Form', nomecss='stile-artistaForm.css')"> </head>
 <body>
-	<header th:replace="fragments/base.html :: intestazione"></header>
+    <nav th:replace="fragments/base.html :: navbar"></nav>
+	<header th:replace="fragments/base.html :: header"></header>
 	<div>
 		<h4>Inserisci i dati di un artista</h4>
 	</div>
@@ -52,6 +53,6 @@
 			</div>
 		</div>
 	</form>
-	<footer th:replace="fragments/base.html :: fondo"></footer>
+	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>

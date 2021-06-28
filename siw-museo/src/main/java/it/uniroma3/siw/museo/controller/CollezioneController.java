@@ -27,7 +27,7 @@ public class CollezioneController {
     @RequestMapping(value="/admin/addCollezione", method = RequestMethod.GET)
     public String addCollezione(Model model) {
     	model.addAttribute("collezione", new Collezione());
-        return "collezioneForm.html";
+        return "admin/collezioneForm.html";
     }
 
     @RequestMapping(value = "/collezione/{id}", method = RequestMethod.GET)
@@ -52,7 +52,7 @@ public class CollezioneController {
             model.addAttribute("collezioni", this.collezioneService.tutti());
             return "collezioni.html";
         }
-        return "collezioneForm.html";
+        return "admin/collezioneForm.html";
     }
     
     @RequestMapping(value= "/collezione/{id}/delete", method= RequestMethod.GET)

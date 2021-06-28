@@ -130,6 +130,7 @@ footer{
         <li><a th:href="@{/collezioni}" th:text="#{nav.coll}">Collezioni</a></li>
         <li><a th:href="@{/info}" th:text="#{nav.info}">Informazioni</a></li>
             <a  sec:authorize="isAnonymous()" id="login" th:href="@{/login}">Login</a>
+            <a  sec:authorize="isAuthenticated()" id="login" th:href="@{/logout}">Logout</a>
             <!--
 	sec:authorize="isAuthenticated()" mi serve per mostrare una cosa agli utenti loggati
 	sec:authorize="hasAuthority('ADMIN')" servirebbe per visualizzarlo solo se si è admin e non user -->
