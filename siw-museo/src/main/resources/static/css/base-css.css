@@ -1,9 +1,9 @@
 header{
   font-family: Georgia, serif;
   Color:brown;
-  background-image: url(img/skyline.png);
+  background-image: url(images/skyline.png);
   Height: 175px;
-  Text-align:right;
+  Text-align:right; 
   Width:100%; 
   Margin-top:45px;
   Margin-bottom:0px;
@@ -33,6 +33,16 @@ nav ul {
 
 nav li {
   float: left;
+}
+
+#logindiv{
+	border: 2px solid black;
+	width:2000px;
+}
+
+#login{
+	text-align: right;
+	color: brown;
 }
 
 nav li a {

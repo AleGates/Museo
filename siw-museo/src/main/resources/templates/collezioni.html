@@ -5,7 +5,7 @@
 <body>
     <nav th:replace="fragments/base.html :: navbar"></nav>
 	<header th:replace="fragments/base.html :: header"></header>
-	<div>
+	<section>
     	<h4 th:text="#{header.collezioni}">List of collections</h4>
 		<ul>
 			<li th:each="collezione : ${collezioni}">

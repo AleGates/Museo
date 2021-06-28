@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/base.html :: headerfiles(#{nav.art}, stile-artista.css)"> </head>
+<head th:replace="fragments/base.html :: headerfiles(#{nav.art}, stile-artisti.css)"> </head>
+
 <body>
     <nav th:replace="fragments/base.html :: navbar"></nav>
 	<header th:replace="fragments/base.html :: header"></header>
-	<div>
+	<section>
     	<h4 th:text="#{header.artisti}">List of artists</h4>
 		<ul>
 			<li th:each="artista : ${artisti}">
@@ -13,7 +14,7 @@
 				   th:text="|${artista.nome} ${artista.cognome}|">Paolo Rossi</a>
 			</li>
 		</ul>
-	</div>
+	</section>
 	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>
