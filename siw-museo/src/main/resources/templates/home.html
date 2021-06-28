@@ -23,23 +23,25 @@
    <header>
     <h1>Museo di Roma 
     <img src="images/roma-stemma.png" alt="roma-capitale" height="53px" width="40px">
+    <section sec:authorize="isAnonymous()">
     <a th:href="@{/login}">
     <input type="image" id="image" alt="Login" src="/images/userLogin.jpg">
     </a>
+    </section>
     </h1>
     
    </header>
  
     <section id="dati">
       <div id="flex-container">
-        <div>
-           <img src="images/compianto-giotto.png" alt="img1" height="400px" width="400px">
+        <div class="immagini">
+           <img src="images/compianto-giotto.png" alt="img1">
        	</div>
-        <div>
-	   <img src="images/venere-botticelli.png" alt="img2" height="400px" width="400px">
+        <div class="immagini">
+	   <img src="images/venere-botticelli.png" alt="img2">
  	</div>
-	<div>
-	  <img src="images/vergine-leonardo.png" alt="img3" height="400px" width="400px">
+	<div class="immagini">
+	  <img src="images/vergine-leonardo.png" alt="img3">
         </div>
       </div>
     </section>
