@@ -26,20 +26,11 @@
 				<span><input type="date" th:field="*{dataDiNascita}" /></span>
 				<span th:if="${#fields.hasErrors('dataDiNascita')}" th:errors="*{dataDiNascita}"></span>
 			</div>
-			<div>
-				<span>Data di morte:</span>
-				<span><input type="date" th:field="*{dataDiMorte}" /></span>
-				<span th:if="${#fields.hasErrors('dataDiMorte')}" th:errors="*{dataDiMorte}"></span>
-			</div>
+			
 			<div>
 				<span>Luogo Nascita:</span>
 				<span><input type="text" th:field="*{luogoNascita}" /></span>
 				<span th:if="${#fields.hasErrors('luogoNascita')}" th:errors="*{luogoNascita}"></span>
-			</div>
-			<div>
-				<span>Luogo Morte:</span>
-				<span><input type="text" th:field="*{luogoMorte}" /></span>
-				<span th:if="${#fields.hasErrors('luogoMorte')}" th:errors="*{luogoMorte}"></span>
 			</div>
 			<div>
 				<span>Nazionalita:</span>
@@ -47,14 +38,14 @@
 				<span th:if="${#fields.hasErrors('nazionalita')}" th:errors="*{Nazionalita}"></span>
 			</div>
 			<div>
-				<span>Email:</span>
-				<span><input type="text" th:field="*{email}" /></span>
-				<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+				<span>Data di morte:</span>
+				<span><input type="date" th:field="*{dataDiMorte}" /></span>
+				<span th:if="${#fields.hasErrors('dataDiMorte')}" th:errors="*{dataDiMorte}"></span>
 			</div>
 			<div>
-				<span>Telefono:</span>
-				<span><input type="text" th:field="*{telefono}" /></span>
-				<span th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></span>
+				<span>Luogo Morte:</span>
+				<span><input type="text" th:field="*{luogoMorte}" /></span>
+				<span th:if="${#fields.hasErrors('luogoMorte')}" th:errors="*{luogoMorte}"></span>
 			</div>
 			<div>
 				<span><button type="submit">Invio</button></span>

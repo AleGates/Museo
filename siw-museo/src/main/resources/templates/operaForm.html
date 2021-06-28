@@ -5,9 +5,9 @@
     <nav th:replace="fragments/base.html :: navbar"></nav>
 	<header th:replace="fragments/base.html :: header"></header>
 	<div>
-		<h4>Inserisci i dati di una persona</h4>
+		<h4>Inserisci i dati di un'opera</h4>
 	</div>
-	<form th:action="@{/opera}" method="POST" th:object="${opera}">
+	<form th:action="@{/admin/opera}" method="POST" th:object="${opera}">
 		<div th:if="${#fields.hasGlobalErrors()}">
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
 		</div>
@@ -21,6 +21,10 @@
 				<span>Anno:</span>
 				<span><input type="text" th:field="*{anno}" /></span>
 				<span th:if="${#fields.hasErrors('anno')}" th:errors="*{anno}"></span>
+			</div>
+			<div>
+				<span>Descrizione (campo non obbligatorio):</span>
+				<span><input type="text" th:field="*{descrizione}" /></span>
 			</div>
 			<div>
 				<span><button type="submit">Invio</button></span>

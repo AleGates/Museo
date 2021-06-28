@@ -39,4 +39,5 @@ public class Collezione {
 	public Collezione() {
 		this.opereContenute= new ArrayList<>();
 	}
+
 }

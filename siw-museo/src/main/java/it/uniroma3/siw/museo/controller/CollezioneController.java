@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.uniroma3.siw.museo.controller.validator.CollezioneValidator;
 import it.uniroma3.siw.museo.model.Collezione;
+import it.uniroma3.siw.museo.model.Curatore;
 import it.uniroma3.siw.museo.service.CollezioneService;
 //vanno aggiunti metodi di: aggiunta/rimozione opere e curatori nella collezione corrente
 //va veriricato il funzionamento di deleteCollezione (specie il path e il return)
@@ -21,7 +22,7 @@ public class CollezioneController {
 	private CollezioneService collezioneService;
 	
     @Autowired
-    private CollezioneValidator collezioneValidator;     
+    private CollezioneValidator collezioneValidator;  
 
     @RequestMapping(value="/admin/addCollezione", method = RequestMethod.GET)
     public String addCollezione(Model model) {
@@ -34,7 +35,7 @@ public class CollezioneController {
     	model.addAttribute("collezione", this.collezioneService.collezionePerId(id));
     	return "collezione.html"; 
     }
-
+    
     @RequestMapping(value = "/collezioni", method = RequestMethod.GET)
     public String getCollezioni(Model model) {
     		model.addAttribute("collezioni", this.collezioneService.tutti());
@@ -42,10 +43,11 @@ public class CollezioneController {
     }
     
     @RequestMapping(value = "/admin/collezione", method = RequestMethod.POST)
-    public String newCollezione(@ModelAttribute("collezione") Collezione collezione, 
+    public String newCollezione(@ModelAttribute("collezione") Collezione collezione, Curatore curatore,
     									Model model, BindingResult bindingResult) {
     	this.collezioneValidator.validate(collezione, bindingResult);
         if (!bindingResult.hasErrors()) {
+        	collezione.setCuratore(curatore);
         	this.collezioneService.inserisci(collezione);
             model.addAttribute("collezioni", this.collezioneService.tutti());
             return "collezioni.html";

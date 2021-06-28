@@ -24,7 +24,7 @@ public class OperaController {
     @Autowired
     private OperaValidator operaValidator;
 
-    @RequestMapping(value="/addOpera", method = RequestMethod.GET)
+    @RequestMapping(value="/admin/addOpera", method = RequestMethod.GET)
     public String addOpera(Model model) {
     	model.addAttribute("opera", new Opera());
         return "operaForm";
@@ -43,7 +43,8 @@ public class OperaController {
     		return "opere.html";//ancora non esiste
     }
     
-    @RequestMapping(value = "/opera", method = RequestMethod.POST)
+    
+    @RequestMapping(value = "/admin/opera", method = RequestMethod.POST)
     public String newOpera(@ModelAttribute("opera") Opera opera, 
     									Model model, BindingResult bindingResult) {
     	this.operaValidator.validate(opera, bindingResult);

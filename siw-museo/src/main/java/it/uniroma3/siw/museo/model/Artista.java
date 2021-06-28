@@ -30,15 +30,20 @@ public class Artista {
 	@Column (nullable=false)
 	private String cognome;
 
+	@Column (nullable=false)
 	private LocalDate dataNascita;
-
+	
+	@Column (nullable=false)
 	private String luogoNascita;
+	
+	@Column (nullable=false)
+	private String nazionalita;
 
 	private LocalDate dataMorte;
 	
 	private String luogoMorte;
 
-	private String nazionalita;
+
 
 	@OneToMany(mappedBy="artista")
 	List<Opera> opereRealizzate;
