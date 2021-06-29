@@ -2,8 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/base.html :: headerfiles(title='Registra Utente', nomecss='stile-registerUser.css')"> </head>
 <body>
+    <nav th:replace="fragments/base.html :: navbar"></nav>
 	<header th:replace="fragments/base.html :: header"></header>
-	<div>
+	<section>
     	<h4>Registrazione</h4>
 	<form th:action="@{/register}" method="POST">
     <table>
@@ -42,7 +43,7 @@
         </tr>
     </table>
 	</form>
-	</div>
+	</section>
     <footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>

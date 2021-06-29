@@ -22,6 +22,11 @@
 				<span><input type="text" th:field="*{descrizione}" /></span>
 				<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>
 			</div>
+			<div id="tendina" align="left">
+               <select name="curatori">
+                 <option th:each="curatore : ${curatori}" th:href="@{'/curatore' + '/' + ${curatore.id}}" th:value="|${curatore.nome} ${curatore.cognome}|">Formaggio Stagionato</option>
+               </select>
+            </div>
 			<div>
 				<span><button type="submit">Invio</button></span>
 			</div>

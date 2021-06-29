@@ -58,8 +58,8 @@ public class ArtistaController {
         if (!bindingResult.hasErrors()) {
         	this.artistaService.inserisci(artista);
             model.addAttribute("artisti", this.artistaService.tutti());
-            return "artisti.html";//ancora non esiste
+            return "artisti.html";
         }
-        return "admin/artistaForm.html";//ancora non esiste
+        return "admin/artistaForm";
     }
 }
