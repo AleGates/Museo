@@ -8,20 +8,25 @@
 	</div>
 	<form th:action="@{/admin/collezione}" method="POST" th:object="${collezione}">
 	<h2>Inserisci i dati di una collezione</h2>
-		<div th:if="${#fields.hasGlobalErrors()}">
+		<!--<div th:if="${#fields.hasGlobalErrors()}">
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
-		</div>		
+		</div>	-->	
 		<div>
 			<div>
 				<span>Nome:</span>
-				<span><input type="text" th:field="*{nome}" /></span>
+				<span><input type="text" th:field="*{nome}" required /></span>
 				<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
 			</div>		
 			<div>
 				<span>Descrizione:</span>
-				<span><input type="text" th:field="*{descrizione}" /></span>
+				<span><input type="text" th:field="*{descrizione}" required /></span>
 				<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>
 			</div>
+		      <div id="tendina" align="left">
+               <select name="c">
+                 <option th:each="curatore : ${curatori}" th:value="|${curatore.nome} ${curatore.cognome}|" th:text="|${curatore.nome} ${curatore.cognome}|">Nome Cognome</option>
+               </select>
+              </div>
 			<div>
 				<span><button type="submit">Invio</button></span>
 			</div>

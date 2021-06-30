@@ -87,7 +87,7 @@ section{
 }
 
 /*Titolo grande della pagina*/
-#nome{
+#nomee{
   font-family: Georgia, serif;
   height:50px;
   background-color: gold;
@@ -125,10 +125,12 @@ footer{
     <nav th:fragment="navbar">
       <ul>
         <li><a th:href="@{/home}">Home</a></li>
+        <li><a th:href="@{/opere}" th:text=#{nav.opere}>Opere</a></li>
         <li><a th:href="@{/artisti}" th:text="#{nav.art}">Artisti</a></li>
         <li><a th:href="@{/collezioni}" th:text="#{nav.coll}">Collezioni</a></li>
         <li><a th:href="@{/info}" th:text="#{nav.info}">Informazioni</a></li>
             <a  sec:authorize="isAnonymous()" id="login" th:href="@{/login}">Login</a>
+            <a  sec:authorize="isAuthenticated()" id="login" th:href="@{/logout}">Logout</a>
             <!--
 	sec:authorize="isAuthenticated()" mi serve per mostrare una cosa agli utenti loggati
 	sec:authorize="hasAuthority('ADMIN')" servirebbe per visualizzarlo solo se si è admin e non user -->
@@ -140,7 +142,7 @@ footer{
     <header th:fragment="header">
      <h2>Museo di Roma 
      <a th:href="@{/home}">
-     <img src="images/roma-stemma.png" alt="roma-capitale" height="53px" width="40px">
+     <img th:src="@{'/images/roma-stemma.png'}" alt="roma-capitale" height="53px" width="40px">
      </a>
      </h2> 
     </header>

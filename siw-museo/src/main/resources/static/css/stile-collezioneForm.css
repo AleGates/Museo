@@ -1,5 +1,5 @@
 form{
-  top:50px;
+  top:250px;
   width:1000px;
   height:440px;
   background:#e6e6e6;
@@ -61,4 +61,8 @@ button{
 button:hover{
   background:#78788c;
   color:#fff
+}
+
+#tendina{
+	margin-top:50px;
 }

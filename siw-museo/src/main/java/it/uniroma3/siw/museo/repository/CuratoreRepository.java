@@ -12,6 +12,8 @@ import it.uniroma3.siw.museo.model.Curatore;
 public interface CuratoreRepository extends CrudRepository<Curatore, Long> {
 
 	public List<Curatore> findByNome(String nome);
+	
+	public List<Curatore> findByCognome(String cognome);
 
 	public List<Curatore> findByNomeAndCognome(String nome, String cognome);
 

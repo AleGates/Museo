@@ -1,7 +1,5 @@
 package it.uniroma3.siw.museo.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,14 +23,10 @@ public class ArtistaController {
     @Autowired
     private ArtistaValidator artistaValidator;
     
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
-    
-
-    @RequestMapping(value="/addArtista", method = RequestMethod.GET)
+    @RequestMapping(value="/admin/addArtista", method = RequestMethod.GET)
     public String addArtista(Model model) {
-    	logger.debug("addArtista");
     	model.addAttribute("artista", new Artista());
-        return "artistaForm.html"; //ancora non esiste
+        return "admin/artistaForm";
     }
 //seleziona l'artista per id
     @RequestMapping(value = "/artista/{id}", method = RequestMethod.GET)
@@ -57,15 +51,15 @@ public class ArtistaController {
     		return "artisti.html";//ancora non esiste
     }
     
-    @RequestMapping(value = "/artista", method = RequestMethod.POST)
+    @RequestMapping(value = "/admin/artista", method = RequestMethod.POST)
     public String newArtista(@ModelAttribute("artista") Artista artista, 
     									Model model, BindingResult bindingResult) {
     	this.artistaValidator.validate(artista, bindingResult);
         if (!bindingResult.hasErrors()) {
         	this.artistaService.inserisci(artista);
             model.addAttribute("artisti", this.artistaService.tutti());
-            return "artisti.html";//ancora non esiste
+            return "artisti.html";
         }
-        return "artistaForm.html";//ancora non esiste
+        return "admin/artistaForm";
     }
 }

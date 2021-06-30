@@ -1,15 +1,15 @@
 !DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/base.html :: headerfiles(title=#{title='SIW'})"> </head>
+<head th:replace="fragments/base.html :: headerfiles(title='Artista Form', nomecss='stile-artistaForm.css')"> </head>
 <body>
-	<header th:replace="fragments/base.html :: intestazione"></header>
-	<div>
-		<h4>Inserisci i dati di un artista</h4>
-	</div>
+    <nav th:replace="fragments/base.html :: navbar"></nav>
+	<header th:replace="fragments/base.html :: header"></header>
+	<section>
 	<form th:action="@{/admin/artista}" method="POST" th:object="${artista}">
-		<div th:if="${#fields.hasGlobalErrors()}">
+	   <h4>Inserisci i dati di un artista</h4>
+		<!--<div th:if="${#fields.hasGlobalErrors()}">
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
-		</div>		
+		</div>		-->
 		<div>
 			<div>
 				<span>Nome:</span>
@@ -52,6 +52,7 @@
 			</div>
 		</div>
 	</form>
-	<footer th:replace="fragments/base.html :: fondo"></footer>
+	</section>
+	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>

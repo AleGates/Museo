@@ -11,7 +11,7 @@
 
 	<header th:replace="fragments/base.html :: header"></header>
 
-	
+	<section>
 	<div th:text="${collezione.nome}">nome</div>
 	<div>A cura di</div>
 	
@@ -20,14 +20,14 @@
 		<h4 th:text="#{header.opere}">List of opere</h4>
 		<ul>
 			<li th:each="opera : ${opere}">
-			<a href="opera.html"
-				th:href="@{'/opera' + '/' + ${opera.id}}" th:text="${opera.titolo}">titolo</a>
+			<a th:href="@{'/opera' + '/' + ${opera.id}}" th:text="${opera.titolo}">titolo</a>
 				<div>realizzata da</div>
 				<a href="artista.html"
 				th:href="@{'/artista' + '/' + ${artista.id}}"
 				 th:text="$|{artista.nome} ${artista.cognome}|">artista</a>
 		</ul>
 	</div>
+	</section>
 
 	<footer th:replace="fragments/base.html :: footer"></footer>
 

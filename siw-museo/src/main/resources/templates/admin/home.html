@@ -4,18 +4,39 @@
 <body>
   	<nav th:replace="fragments/base.html :: navbar"></nav>
 	<header th:replace="fragments/base.html :: header"></header>
-    <section>
-    	<h4>Homepage ADMIN</h4>
+    <section id="menu">
+    <div id="title"><h1>Area riservata ADMIN</h1></div>
+    
+     <div class="flex-container" id="containerPrincipale">
+     
+     
+      <div class="flex-container" id="containerUno">
 		<div>
-			<a th:href="@{/prodotto}">Elenco prodotti</a>
+			<a th:href="@{/admin/addOpera}"><button>Aggiungi Opera</button></a>
    		</div>
    		<div>
-			<a th:href="@{/admin/prodotto}">Inserisci dati prodotto</a>
+			<a th:href="@{/admin/addArtista}"><button>Aggiungi Artista</button></a>
    		</div>
    		<div>
-			<a th:href="@{/logout}">Logout</a>
+			<a th:href="@{/admin/addCollezione}"><button>Aggiungi Collezione</button></a>
    		</div>
-    </section>
+      </div>
+      
+      <div class="flex-container" id="containerDue">
+		<div>
+			<a th:href="@{/}"><button>Elimina Opera</button></a>
+   		</div>
+   		<div>
+			<a th:href="@{/admin/}"><button>Elimina Artista</button></a>
+   		</div>
+   		<div>
+			<a th:href="@{/}"><button>Elimina Collezione</button></a>
+   		</div>  		  		   		
+     </div>
+     
+     </div>
+     </section>
+    <div><a th:href="@{/logout}"><button id="logout">Logout</button></a></div>
     <footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>
