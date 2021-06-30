@@ -9,10 +9,8 @@
     	<h4 th:text="#{header.collezioni}">List of collections</h4>
 		<ul>
 			<li th:each="collezione : ${collezioni}">
-				<a href="collezione.html" 
-				   th:href="@{'/collezione' + '/' + ${collezione.id}}" 
+				<a th:href="@{'/collezione' + '/' + ${collezione.id}}" 
 				   th:text="${collezione.nome}">nome</a>
-				   <div th:text=" ${collezione.descrizione}"> descrizione collezione</div>
 			</li>
 		</ul>
 	</div>

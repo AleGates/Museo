@@ -3,6 +3,7 @@ package it.uniroma3.siw.museo.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -48,7 +49,7 @@ public class Artista {
 
 
 
-	@OneToMany(mappedBy="artista")
+	@OneToMany(mappedBy="artista", cascade = CascadeType.ALL)
 	List<Opera> opereRealizzate;
 
 

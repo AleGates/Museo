@@ -28,6 +28,11 @@ public class CuratoreService {
 	}
 	
 	@Transactional
+	public List<Curatore> curatorePerCognome(String cognome) {
+		return curatoreRepository.findByCognome(cognome);
+	}
+	
+	@Transactional
 	public Curatore curatorePerMatricola(Long matricola) {
 			Optional<Curatore> optional = curatoreRepository.findByMatricola(matricola);
 			if (optional.isPresent())

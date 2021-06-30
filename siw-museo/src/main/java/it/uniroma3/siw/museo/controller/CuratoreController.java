@@ -24,12 +24,9 @@ public class CuratoreController {
     @Autowired
     private CuratoreValidator curatoreValidator;
     
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
-    
 
     @RequestMapping(value="/addCuratore", method = RequestMethod.GET)
     public String addCuratore(Model model) {
-    	logger.debug("addCuratore");
     	model.addAttribute("curatore", new Curatore());
         return "curatoreForm.html"; //ancora non esiste
     }

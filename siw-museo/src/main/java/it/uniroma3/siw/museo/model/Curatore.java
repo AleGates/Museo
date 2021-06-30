@@ -46,6 +46,6 @@ public class Curatore {
 	List<Collezione> collezioniCurate;
 	
 	public Curatore() {
-		
+		collezioniCurate = new ArrayList<>();
 	}
 }

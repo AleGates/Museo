@@ -50,7 +50,10 @@ public class CollezioneService {
 			return false;
 	}
 
+	@Transactional
 	public void deleteCollezioneById(Long id) {
 		collezioneRepository.deleteById(id);
 	}
+
+
 }
