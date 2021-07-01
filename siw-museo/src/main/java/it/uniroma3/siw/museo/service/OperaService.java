@@ -49,6 +49,10 @@ public class OperaService{
 		else 
 			return false;
 	}
+	
+	public List<Opera> trovaPerCollezioneId(Long id){
+		return this.operaRepository.findByCollezioneId(id);
+	}
 
 	public void deleteOperaById(Long id) {
 		operaRepository.deleteById(id);

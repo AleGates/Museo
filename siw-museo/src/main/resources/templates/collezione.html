@@ -20,11 +20,9 @@
 		<h4 th:text="#{header.opere}">List of opere</h4>
 		<ul>
 			<li th:each="opera : ${opere}">
-			<a th:href="@{'/opera' + '/' + ${opera.id}}" th:text="${opera.titolo}">titolo</a>
-				<div>realizzata da</div>
-				<a href="artista.html"
-				th:href="@{'/artista' + '/' + ${artista.id}}"
-				 th:text="$|{artista.nome} ${artista.cognome}|">artista</a>
+			<a 
+			th:href="@{'/opera' + '/' + ${opera.id}}"
+			 th:text="${opera.titolo}">titolo</a>
 		</ul>
 	</div>
 	</section>
