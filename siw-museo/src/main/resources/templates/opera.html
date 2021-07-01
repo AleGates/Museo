@@ -1,21 +1,16 @@
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>Museo di Roma</title>
-    <link href="stile-opera.css" rel="stylesheet"> 
-  </head>
+  <head th:replace="fragments/base.html :: headerfiles(${opera.titolo}, stile-opera.css)"
 
   <body>
     <nav th:replace="fragments/base.html :: navbar"></nav>
 
 	<header th:replace="fragments/base.html :: header"></header>
 
-
-    <section id="nomee">
+    <section>
+    <section id="title">
       <p>
-	<h2><strong>Titolo opera</strong> di
-	 <a href="artista.html"> Artista</a></h2>
+	<h2><strong th:text="${opera.titolo}">Titolo opera</strong> di
+	<!-- <a th:href="@{'/artista' + '/' + ${artista.id}}" th:text="|${artista.nome} ${artista.cognome}">Artista</a></h2>-->
 	</p>
       </section>
     
@@ -32,6 +27,7 @@ Una Deposizione era stata già dipinta forse dal giovane Giotto nella basilica s
           </p> 
           </div>
       </div>
+      </section>
     </section>
     <footer>Copyright &copy; 2021 Museo di Roma</footer>
   </body>
