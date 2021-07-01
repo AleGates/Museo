@@ -7,23 +7,12 @@
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="news.asp">Autori</a></li>
-        <li><a href="contact.asp">Collezioni</a></li>
-        <li><a href="about.asp">Informazioni</a></li>
-      </ul>
-    </nav>
+    <nav th:replace="fragments/base.html :: navbar"></nav>
 
-   <header>
-    <h2>Museo di Roma 
-    <img src="img/roma-stemma.png" alt="roma-capitale" height="53px" width="40px">
-    </h2> 
-   </header>
+	<header th:replace="fragments/base.html :: header"></header>
 
 
-    <section id="nome">
+    <section id="nomee">
       <p>
 	<h2><strong>Titolo opera</strong> di
 	 <a href="artista.html"> Artista</a></h2>

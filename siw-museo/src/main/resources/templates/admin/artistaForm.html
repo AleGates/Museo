@@ -23,8 +23,8 @@
 			</div>
 			<div>
 				<span>Data di nascita:</span>
-				<span><input type="date" th:field="*{dataDiNascita}" /></span>
-				<span th:if="${#fields.hasErrors('dataDiNascita')}" th:errors="*{dataDiNascita}"></span>
+				<span><input type="date" th:value="*{dataNascita}" th:field="*{dataNascita}" /></span>
+				<span th:if="${#fields.hasErrors('dataNascita')}" th:errors="*{dataNascita}"></span>
 			</div>
 			
 			<div>
@@ -39,8 +39,8 @@
 			</div>
 			<div>
 				<span>Data di morte:</span>
-				<span><input type="date" th:field="*{dataDiMorte}" /></span>
-				<span th:if="${#fields.hasErrors('dataDiMorte')}" th:errors="*{dataDiMorte}"></span>
+				<span><input type="date" th:value="*{dataMorte}" th:field="*{dataMorte}" /></span>
+				<span th:if="${#fields.hasErrors('dataMorte')}" th:errors="*{dataMorte}"></span>
 			</div>
 			<div>
 				<span>Luogo Morte:</span>

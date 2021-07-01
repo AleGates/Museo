@@ -1,8 +1,10 @@
 #menu{
-	margin-top:250px;
+	background-color:brown;
+	margin-top:230px;
+	padding:20px;
 }
 .flex-container{
-  Background-color: lightgoldenrodyellow;
+  Background-color:  lightgoldenrodyellow;
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
@@ -28,6 +30,7 @@
   text-align: right;
   height:170px;
   border-right: thick double brown;
+  background:none;
 }
 
 #containerDue{
@@ -35,6 +38,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   height:170px;
+  background:none;
 }
 
 button{
@@ -48,7 +52,6 @@ button:hover{
 }
 
 #title{
-	    margin-top:100px;
 	    width: 20%;
         border: 4px solid gold;
 		background-color: lightgoldenrodyellow;
@@ -57,10 +60,10 @@ button:hover{
         margin-right:40%;
         border-radius: 20px;
 }
+
 h1{
 	text-align: center;
 	color: brown;
-
 }
 
 #logout{
