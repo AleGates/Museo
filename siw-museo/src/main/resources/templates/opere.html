@@ -9,8 +9,8 @@
 	<section>
 		<h4 th:text="#{header.opere}">List of opere</h4>
 		<ul>
-			<li th:each="opera : ${opere}"><a href="opera.html"
-				th:href="@{'/opera' + '/' + ${opera.id}}" th:text="${opera.titolo}">titolo</a>
+			<li th:each="opera : ${opere}"><a th:href="@{'/opera' + '/' + ${opera.id}}" 
+			                                  th:text="${opera.titolo}">titolo</a>
 
 				<div th:text="${opera.anno}">anno</div></li>
 		</ul>

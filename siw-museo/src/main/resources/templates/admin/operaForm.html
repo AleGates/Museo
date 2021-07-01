@@ -4,10 +4,10 @@
 <body>
     <nav th:replace="fragments/base.html :: navbar"></nav>
 	<header th:replace="fragments/base.html :: header"></header>
-	<div>
-		<h4>Inserisci i dati di un'opera</h4>
-	</div>
+    
+    <section>
 	<form th:action="@{/admin/opera}" method="POST" th:object="${opera}">
+	<h2>Inserisci i dati di un'opera</h2>
 		<div th:if="${#fields.hasGlobalErrors()}">
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
 		</div>
@@ -37,10 +37,11 @@
                </select>
               </div>
 			<div>
-				<span><button type="submit">Invio</button></span>
+			   <button class="buttonForm" type="submit">Invio</button>
 			</div>
 		</div>
 	</form>
+    </section>
 	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>
