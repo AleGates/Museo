@@ -26,6 +26,16 @@
 				<span>Descrizione (campo non obbligatorio):</span>
 				<span><input type="text" th:field="*{descrizione}" /></span>
 			</div>
+			 <div id="tendina" align="left">
+               <select name="a">
+                 <option th:each="artista : ${artisti}" th:value="|${artista.nome} ${artista.cognome}|" th:text="|${artista.nome} ${artista.cognome}|">Nome Cognome</option>
+               </select>
+              </div>
+               <div id="tendina" align="left">
+               <select name="co">
+                 <option th:each="collezione : ${collezioni}" th:value="${collezione.nome}" th:text="${collezione.nome}">Nome</option>
+               </select>
+              </div>
 			<div>
 			   <button class="buttonForm" type="submit">Invio</button>
 			</div>
