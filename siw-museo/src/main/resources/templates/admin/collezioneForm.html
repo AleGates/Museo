@@ -4,8 +4,8 @@
 <body>
     <nav th:replace="fragments/base.html :: navbar"></nav>
 	<header th:replace="fragments/base.html :: header"></header>
-	<div>
-	</div>
+
+    <section>
 	<form th:action="@{/admin/collezione}" method="POST" th:object="${collezione}">
 	<h2>Inserisci i dati di una collezione</h2>
 		<!--<div th:if="${#fields.hasGlobalErrors()}">
@@ -19,19 +19,21 @@
 			</div>		
 			<div>
 				<span>Descrizione:</span>
-				<span><input type="text" th:field="*{descrizione}" required /></span>
+				<div><textarea th:field="*{descrizione}" rows="10" cols="120" maxlength:"240" required /></div>
 				<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>
 			</div>
 		      <div id="tendina" align="left">
+		      <span>Curatore:</span>
                <select name="c">
                  <option th:each="curatore : ${curatori}" th:value="|${curatore.nome} ${curatore.cognome}|" th:text="|${curatore.nome} ${curatore.cognome}|">Nome Cognome</option>
                </select>
               </div>
 			<div>
-				<span><button type="submit">Invio</button></span>
+				<button class="buttonForm" type="submit">Invio</button>
 			</div>
 		</div>
 	</form>
+    </section>
 	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>
