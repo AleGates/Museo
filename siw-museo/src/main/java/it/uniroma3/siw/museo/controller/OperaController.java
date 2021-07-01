@@ -40,7 +40,7 @@ public class OperaController {
     @RequestMapping(value = "/opere", method = RequestMethod.GET)
     public String getOpere(Model model) {
     		model.addAttribute("opere", this.operaService.tutti());
-    		return "opere.html";//ancora non esiste
+    		return "opere.html";
     }
     
     
