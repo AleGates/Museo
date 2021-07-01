@@ -29,15 +29,17 @@ nav{
   Height:40px;
   Background-color: whitesmoke;
   Width:100%;
-  Top: 0;
-  Left: 0;
+  Top: 0px;
+  Left: 0px;
   Position:fixed;
 }
 
 nav ul {
+  display:flex;
+  justify-content: space-between;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   overflow: hidden;
   background-color: whitesmoke;
 }
@@ -83,23 +85,23 @@ Body{
 }
 
 section{
-	   margin-top: 220px;
+	   margin-top: 220px;   
 }
 
 /*Titolo grande della pagina*/
-#nomee{
+#titolo{
   font-family: Georgia, serif;
-  height:50px;
   background-color: gold;
-  margin-top: 50px;
+  margin-top: 225px;
   Padding: 10px;
   Padding-left: 20px;
 }
 
-/*
+
 #dati{
+  margin-top:10px;
   margin-bottom:10px;
-}*/
+}
 
 footer{
   background-color: brown;
@@ -113,30 +115,26 @@ footer{
   position: fixed;
 }
 
-#login{
-	color: brown;
-	position:absolute;
-	top: 10px;
-	right: 10px;
-}
 	</style>
 </head>
 <body>
     <nav th:fragment="navbar">
       <ul>
-        <li><a th:href="@{/home}">Home</a></li>
+        <span><li><a th:href="@{/home}">Home</a></li>
         <li><a th:href="@{/opere}" th:text=#{nav.opere}>Opere</a></li>
         <li><a th:href="@{/artisti}" th:text="#{nav.art}">Artisti</a></li>
         <li><a th:href="@{/collezioni}" th:text="#{nav.coll}">Collezioni</a></li>
-        <li><a th:href="@{/info}" th:text="#{nav.info}">Informazioni</a></li>
-            <a  sec:authorize="isAnonymous()" id="login" th:href="@{/login}">Login</a>
+        <li><a th:href="@{/info}" th:text="#{nav.info}">Informazioni</a></li></span>
+        <span><li><a sec:authorize="isAuthenticated()" th:href="@{/default}">Area Riservata</a></li>
+        <li><a sec:authorize="isAnonymous()" th:href="@{/login}">Login</a></li>
+        <li><a sec:authorize="isAuthenticated()" th:href="@{/logout}">Logout</a></li> <span> 
+         <!--   <a  sec:authorize="isAnonymous()" id="login" th:href="@{/login}">Login</a>
             <a  sec:authorize="isAuthenticated()" id="login" th:href="@{/logout}">Logout</a>
-            <!--
+            
 	sec:authorize="isAuthenticated()" mi serve per mostrare una cosa agli utenti loggati
 	sec:authorize="hasAuthority('ADMIN')" servirebbe per visualizzarlo solo se si è admin e non user -->
       </ul>
     </nav>
-
     
     
     <header th:fragment="header">
