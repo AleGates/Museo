@@ -19,6 +19,7 @@ import it.uniroma3.siw.museo.model.Collezione;
 import it.uniroma3.siw.museo.model.Curatore;
 import it.uniroma3.siw.museo.service.CollezioneService;
 import it.uniroma3.siw.museo.service.CuratoreService;
+import it.uniroma3.siw.museo.service.OperaService;
 import net.bytebuddy.asm.Advice.This;
 //vanno aggiunti metodi di: aggiunta/rimozione opere e curatori nella collezione corrente
 //va veriricato il funzionamento di deleteCollezione (specie il path e il return)
@@ -30,6 +31,9 @@ public class CollezioneController {
 	
 	@Autowired
 	private CuratoreService curatoreService;
+	
+	@Autowired
+	private OperaService operaService;
 	
 	
     @Autowired
@@ -46,6 +50,7 @@ public class CollezioneController {
     public String getCollezione(@PathVariable("id") Long id, Model model) {
     	model.addAttribute("collezione", this.collezioneService.collezionePerId(id));
     	model.addAttribute("curatore", this.collezioneService.collezionePerId(id).getCuratore());
+    	model.addAttribute("opere", this.operaService.trovaPerCollezioneId(id));
     	return "collezione.html"; 
     }
     
