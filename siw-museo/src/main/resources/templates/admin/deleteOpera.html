@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head
+	th:replace="fragments/base.html :: headerfiles(#{nav.opere}, opere-stile.css)">
+</head>
+<body>
+	<section>
+		<h4>Elimina un'opera</h4>
+		<nav th:replace="fragments/base.html :: navbar"></nav>
+		<header th:replace="fragments/base.html :: header"></header>
+		<h4 th:text="#{header.opere}">List of opere</h4>
+		<ul>
+			<li th:each="opera : ${opere}">
+				<form th:action="@{'/admin/deleteOpera' + '/' + ${opera.id}}"
+					method="POST" th:object="${opera}">
+					<a th:href="@{'/opera' + '/' + ${opera.id}}"
+						th:text="${opera.titolo}">titolo</a>
+					<button type="submit">Delete</button>
+					<div th:text="${opera.anno}">anno</div>
+				</form>
+			</li>
+		</ul>
+	</section>
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

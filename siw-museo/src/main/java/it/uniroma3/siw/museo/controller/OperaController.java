@@ -83,15 +83,16 @@ public class OperaController {
     }
 
     
-    @RequestMapping(value= "/opera/{id}/delete", method= RequestMethod.GET)
-    public String deleteOpera(Model model) {
+    @RequestMapping(value= "/admin/deleteOpere", method= RequestMethod.GET)
+    public String deleteCollezioneGet(Model model) {
     	model.addAttribute("opere", this.operaService.tutti());
-    	return "opere.html";
+    	return "admin/deleteOpera.html";
     }
     
-	@RequestMapping(value = "/opera/{id}/delete", method = RequestMethod.POST)
-	public String deleteOpera(@PathVariable Long id, Model model) {
+    @RequestMapping(value = "/admin/deleteOpera/{id}", method = RequestMethod.POST)
+	public String deleteCollezionePost(@PathVariable("id") Long id, Model model) {
 		this.operaService.deleteOperaById(id);
-		return "opere.html";
+		model.addAttribute("opere", this.operaService.tutti());
+		return "admin/deleteOpera.html";
 	}
 }

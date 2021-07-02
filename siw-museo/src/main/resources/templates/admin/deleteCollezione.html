@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head
+	th:replace="fragments/base.html :: headerfiles(#{nav.coll}, stile-collezioni.css)">
+</head>
+<body>
+<section>
+	   <h4>Elimina una collezione</h4>
+	<nav th:replace="fragments/base.html :: navbar"></nav>
+	<header th:replace="fragments/base.html :: header"></header>
+	<h4 th:text="#{header.collezioni}">List of collections</h4>
+	<ul>
+		<li th:each="collezione : ${collezioni}">
+			<form
+				th:action="@{'/admin/deleteCollezione' + '/' + ${collezione.id}}"
+				method="POST" th:object="${collezione}">
+				<a th:href="@{'/collezione' + '/' + ${collezione.id}}"
+					th:text="${collezione.nome}">nome</a>
+				<button type="submit">Delete</button>
+			</form>
+		</li>
+	</ul>
+	</section>
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

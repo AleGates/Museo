@@ -76,16 +76,16 @@ public class CollezioneController {
         return "admin/collezioneForm.html";
     }
     
-    @RequestMapping(value= "/collezione/{id}/delete", method= RequestMethod.GET)
-    public String deleteCollezione(Model model) {
+    @RequestMapping(value= "/admin/deleteCollezioni", method= RequestMethod.GET)
+    public String deleteCollezioneGet(Model model) {
     	model.addAttribute("collezioni", this.collezioneService.tutti());
-    	return "Delecollezioni.html";
+    	return "admin/deleteCollezione.html";
     }
     
-    
-	@RequestMapping(value = "/collezione/{id}/delete", method = RequestMethod.POST)
-	public String deleteCollezione(@PathVariable Long id, Model model) {
+    @RequestMapping(value = "/admin/deleteCollezione/{id}", method = RequestMethod.POST)
+	public String deleteCollezionePost(@PathVariable("id") Long id, Model model) {
 		this.collezioneService.deleteCollezioneById(id);
-		return "collezioni.html";
+		model.addAttribute("collezioni", this.collezioneService.tutti());
+		return "admin/deleteCollezione.html";
 	}
 }
