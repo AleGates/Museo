@@ -7,13 +7,19 @@
     <nav th:replace="fragments/base.html :: navbar"></nav>
 	<header th:replace="fragments/base.html :: header"></header>
 	<section>
-		<h4 th:text="#{header.opere}">List of opere</h4>
-		<ul>
-			<li th:each="opera : ${opere}"><a th:href="@{'/opera' + '/' + ${opera.id}}" 
-			                                  th:text="${opera.titolo}">titolo</a>
-
-				<div th:text="${opera.anno}">anno</div></li>
-		</ul>
+     <section id="title">
+		<h2 th:text="#{header.opere}">List of opere</h2>
+     </section>
+	<section id="dati">
+		<div class="lista">
+			<div class="objLista" th:each="opera : ${opere}">
+			     <a th:href="@{'/opera' + '/' + ${opera.id}}">
+			        <img th:src="@{'/images' + ${opera.titolo} + '.jpg'}"></img>
+			     </a>
+			     <div th:text="${opera.titolo}">titolo</div>
+                 <div th:text="${opera.anno}">anno</div>
+            </div>
+		</div>
 	</section>
 	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
