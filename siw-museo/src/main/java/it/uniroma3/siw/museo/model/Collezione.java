@@ -29,7 +29,7 @@ public class Collezione {
 	@Column (nullable=false)
 	private String nome;
 
-	@Column (nullable=false)
+	@Column (length=2000)
 	private String descrizione;
 
 	@ManyToOne
@@ -42,7 +42,7 @@ public class Collezione {
 		this.opereContenute= new ArrayList<>();
 	}
 	
-	@Override
+	/*@Override
 	public int hashCode() {
 		int hash = 5;
 		hash = 83 * hash + Objects.hashCode(this.id);
@@ -62,6 +62,6 @@ public class Collezione {
 			return false;
 		}
 		return true;
-	}
+	}*/
 
 }

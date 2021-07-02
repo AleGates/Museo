@@ -24,6 +24,13 @@ input{
     border: thick double rgb(89, 53, 118);
 }
 
+@media (max-width: 450px) {
+input{
+	position:absolute;
+	top:60px;
+}
+}
+
 nav{
   Background-color: whitesmoke;
   Width:100%;

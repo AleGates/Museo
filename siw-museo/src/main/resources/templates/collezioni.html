@@ -6,14 +6,17 @@
     <nav th:replace="fragments/base.html :: navbar"></nav>
 	<header th:replace="fragments/base.html :: header"></header>
 	<section>
-    	<h4 th:text="#{header.collezioni}">List of collections</h4>
-		<ul>
-			<li th:each="collezione : ${collezioni}">
-				<a th:href="@{'/collezione' + '/' + ${collezione.id}}" 
-				   th:text="${collezione.nome}">nome</a>
-			</li>
-		</ul>
-	</div>
+	  <section id="title">
+    	<h2 th:text="#{header.collezioni}">List of collections</h2>
+      </section>
+	  <section id="dati">
+		<div id="multiple" th:each="collezione : ${collezioni}">
+		<a th:href="@{'/collezione' + '/' + ${collezione.id}}">
+			<div id="singole" th:text="${collezione.nome}">Nome</div>
+		</a>
+		</div>
+	  </section>
+	</section>
 	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>
