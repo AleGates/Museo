@@ -28,22 +28,13 @@ public class ArtistaController {
     	model.addAttribute("artista", new Artista());
         return "admin/artistaForm";
     }
-//seleziona l'artista per id
+    
     @RequestMapping(value = "/artista/{id}", method = RequestMethod.GET)
     public String getArtistaPerId(@PathVariable("id") Long id, Model model) {
     	model.addAttribute("artista", this.artistaService.artistaPerId(id));
     	return "artista.html"; 
     }
-  
-//seleziona l'artissta per nome e cognome
-    /*non so se è necessario
-    @RequestMapping(value = "/artista/{nome, cognome}", method = RequestMethod.GET)
-    public String getArtistaPerNomeECognome(@PathVariable("nome, cognome") String nome,
-     String cognome, Model model) {
-    	model.addAttribute("artista", this.artistaService.artistaPerNomeAndCognome(nome, cognome));
-    	return "artista.html"; 
-    }
-    */
+
 
     @RequestMapping(value = "/artisti", method = RequestMethod.GET)
     public String getArtisti(Model model) {
@@ -62,4 +53,17 @@ public class ArtistaController {
         }
         return "admin/artistaForm";
     }
+    
+    @RequestMapping(value= "/admin/deleteArtisti", method= RequestMethod.GET)
+    public String deleteCollezioneGet(Model model) {
+    	model.addAttribute("artisti", this.artistaService.tutti());
+    	return "admin/deleteArtista.html";
+    }
+    
+    @RequestMapping(value = "/admin/delete/{id}", method = RequestMethod.POST)
+	public String deleteCollezionePost(@PathVariable("id") Long id, Model model) {
+		this.artistaService.deleteArtistaById(id);
+		model.addAttribute("artisti", this.artistaService.tutti());
+		return "artisti.html";
+	}
 }

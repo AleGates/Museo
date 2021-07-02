@@ -49,4 +49,9 @@ public class ArtistaService {
 		else 
 			return false;
 	}
+	
+	@Transactional
+	public void deleteArtistaById(Long id) {
+		this.artistaRepository.deleteById(id);
+	}
 }

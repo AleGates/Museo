@@ -79,7 +79,7 @@ public class CollezioneController {
     @RequestMapping(value= "/collezione/{id}/delete", method= RequestMethod.GET)
     public String deleteCollezione(Model model) {
     	model.addAttribute("collezioni", this.collezioneService.tutti());
-    	return "collezioni.html";
+    	return "Delecollezioni.html";
     }
     
     
