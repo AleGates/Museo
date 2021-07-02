@@ -5,32 +5,34 @@
   	<nav th:replace="fragments/base.html :: navbar"></nav>
 	<header th:replace="fragments/base.html :: header"></header>
     <section id="menu">
-    <div id="title"><h1>Area riservata ADMIN</h1></div>
+    <div id="titleAdmin"><h1>Area riservata ADMIN</h1></div>
     
      <div class="flex-container" id="containerPrincipale">
      
      
       <div class="flex-container" id="containerUno">
 		<div>
-			<a th:href="@{/admin/addOpera}"><button>Aggiungi Opera</button></a>
+			<a th:href="@{/admin/addOpera}"><button class="buttonAdmin">Aggiungi Opera</button></a>
    		</div>
    		<div>
-			<a th:href="@{/admin/addArtista}"><button>Aggiungi Artista</button></a>
+			<a th:href="@{/admin/addArtista}"><button class="buttonAdmin">Aggiungi Artista</button></a>
    		</div>
    		<div>
-			<a th:href="@{/admin/addCollezione}"><button>Aggiungi Collezione</button></a>
+			<a th:href="@{/admin/addCollezione}"><button class="buttonAdmin">Aggiungi Collezione</button></a>
    		</div>
       </div>
       
       <div class="flex-container" id="containerDue">
 		<div>
-			<a th:href="@{/}"><button>Elimina Opera</button></a>
+			<a th:href="@{/}"><button class="buttonAdmin">Elimina Opera</button></a>
    		</div>
    		<div>
+
 			<a th:href="@{/admin/deleteArtisti}"><button>Elimina Artista</button></a>
+
    		</div>
    		<div>
-			<a th:href="@{/}"><button>Elimina Collezione</button></a>
+			<a th:href="@{/}"><button class="buttonAdmin">Elimina Collezione</button></a>
    		</div>  		  		   		
      </div>
      

@@ -9,8 +9,8 @@
     <nav th:replace="fragments/base.html :: navbar"></nav>
 	<header th:replace="fragments/base.html :: header"></header>
 
-
-    <section id="titolo">
+<section>
+    <section id="title">
       <h2 th:text="|${artista.nome} ${artista.cognome}|">Nome Cognome artista</h2>
       </section>
     
@@ -38,6 +38,7 @@ Giotto super� la smaterializzazione dell'immagine, l'astrattismo propri dell'a
           </div>
       </div>
     </section>
+    <section id="dati">
     <div>
     	<h4 th:text="#{header.opere}">List of opere</h4>
 		<ul>
@@ -50,6 +51,8 @@ Giotto super� la smaterializzazione dell'immagine, l'astrattismo propri dell'a
 			</li>
 		</ul>
 	</div>
+    </section>
+</section>
 	<footer th:replace="fragments/base.html :: footer"></footer>
   </body>
 

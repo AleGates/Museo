@@ -6,7 +6,7 @@
 	<header th:replace="fragments/base.html :: header"></header>
 	<section>
 	<form th:action="@{/admin/artista}" method="POST" th:object="${artista}">
-	   <h4>Inserisci i dati di un artista</h4>
+	   <h2>Inserisci i dati di un artista</h2>
 		<!--<div th:if="${#fields.hasGlobalErrors()}">
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
 		</div>		-->
@@ -48,7 +48,7 @@
 				<span th:if="${#fields.hasErrors('luogoMorte')}" th:errors="*{luogoMorte}"></span>
 			</div>
 			<div>
-				<span><button type="submit">Invio</button></span>
+				<span><button class="buttonForm "type="submit">Invio</button></span>
 			</div>
 		</div>
 	</form>

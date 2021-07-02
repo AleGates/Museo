@@ -1,18 +1,14 @@
+
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-
-
-<head
-	th:replace="fragments/base.html :: headerfiles(#{title.opera}, stile-collezione.css)"></head>
-
-
+  <head th:replace="fragments/base.html :: headerfiles(${opera.titolo}, stile-opera.css)"
+        
 <body>
 	<nav th:replace="fragments/base.html :: navbar"></nav>
 
 	<header th:replace="fragments/base.html :: header"></header>
-
-
-	<section id="nomee">
+	  <section>
+    <section id="title">
 		<div th:text="${opera.titolo}">Titolo</div>
 		<div>di</div>
 		<a th:href="@{'/artista' + '/' + ${artista.id}}"
@@ -25,48 +21,48 @@
 				width="400px">
 			<div class="col">
 				<h5>DESCRIZIONE:</h5>
-				<p id="testo">La scena, la più drammatica dell'intero ciclo è
-					una delle più celebri, mostra una spiccata conoscenza delle regole
-					della pittura fin dalla composizione. Gesù è adagiato in basso a
+				<p id="testo">La scena, la piÃ¹ drammatica dell'intero ciclo Ã¨
+					una delle piÃ¹ celebri, mostra una spiccata conoscenza delle regole
+					della pittura fin dalla composizione. GesÃ¹ Ã¨ adagiato in basso a
 					sinistra, stretto dalla Vergine che, in maniera toccante, avvicina
 					il proprio viso a quello del figlio. Tutta una serie di linee di
 					sguardi e di forza dirige immediatamente l'attenzione dello
 					spettatore su questo angolo, a partire dall'andamento della roccia
 					dello sfondo che digrada verso il basso. Le pie donne reggono le
 					mani di Cristo e la Maddalena gemente ne raccoglie i piedi. Sciolta
-					e naturalistica è la posa di san Giovanni, che si piega distendendo
+					e naturalistica Ã¨ la posa di san Giovanni, che si piega distendendo
 					le braccia indietro, derivata forse dal Sarcofago di Meleagro che
 					era a Padova. Dietro a destra stanno le figure di Nicodemo e
 					Giuseppe d'Arimatea, mentre a sinistra, in basso, una figura seduta
 					di spalle crea una massa scultorea. A sinistra accorrono altre
 					donne in lacrime, dalle pose studiate e drammatiche. In alto gli
 					angeli accorrono con altre pose di disperazione, scorciati con
-					grande varietà di pose, partecipando a una sorta di drammaticità
-					cosmica che investe anche la natura: l'alberello in alto a destra è
+					grande varietÃ  di pose, partecipando a una sorta di drammaticitÃ 
+					cosmica che investe anche la natura: l'alberello in alto a destra Ã¨
 					infatti secco. Ma proprio come la natura sembra morire d'inverno ed
 					in primavera risorgere, Cristo sembra morto e dopo tre giorni
-					risorgerà. Dall'albero scheletrico in alto a destra il taglio in
+					risorgerÃ . Dall'albero scheletrico in alto a destra il taglio in
 					diagonale del nudo profilo roccioso scende accompagnando il ritmo
 					in caduta delle figure verso il centro emotivo della scena
 					rappresentato dall'abbraccio della madre al figlio morto.
 					Espediente inedito sono i due personaggi di spalle in primo piano,
 					raffigurati come grosse masse a dimostrazione che Giotto ha saputo
 					conquistare uno spazio reale in cui tutte le figure si dispongono
-					liberamente in ogni direttrice spaziale. L'unico addolcimento è
+					liberamente in ogni direttrice spaziale. L'unico addolcimento Ã¨
 					dato dal concerto di colori pastello, estremamente raffinato, che
 					orchestra i toni delle vesti, con una diversa incidenza luminosa
-					che arriva, negli esempi più eclatanti, ad effetti di cangiantismo
-					cromatico: tali finezze testimoniano come questa scena, pressoché
-					al centro della parete, fosse una delle più curate del ciclo,
+					che arriva, negli esempi piÃ¹ eclatanti, ad effetti di cangiantismo
+					cromatico: tali finezze testimoniano come questa scena, pressochÃ©
+					al centro della parete, fosse una delle piÃ¹ curate del ciclo,
 					sicuramente autografa e realizzata in modo da catturare
-					l'attenzione del pubblico. Liberata dalle rigidità bizantine, la
+					l'attenzione del pubblico. Liberata dalle rigiditÃ  bizantine, la
 					scena fu presa a modello per intere generazioni di artisti
-					successivi. Una Deposizione era stata già dipinta forse dal giovane
+					successivi. Una Deposizione era stata giÃ  dipinta forse dal giovane
 					Giotto nella basilica superiore di Assisi.</p>
 			</div>
 		</div>
-	</section>
+	 </section>
+  </section>
 	<footer>Copyright &copy; 2021 Museo di Roma</footer>
 </body>
-
 </html>
