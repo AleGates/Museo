@@ -6,14 +6,21 @@
     <nav th:replace="fragments/base.html :: navbar"></nav>
 	<header th:replace="fragments/base.html :: header"></header>
 	<section>
-    	<h4 th:text="#{header.artisti}">List of artists</h4>
-		<ul>
-			<li th:each="artista : ${artisti}">
-				<a href="artista.html" 
-				   th:href="@{'/artista' + '/' + ${artista.id}}" 
-				   th:text="|${artista.nome} ${artista.cognome}|">Paolo Rossi</a>
-			</li>
-		</ul>
+     <section id="title">
+    	<h2 th:text="#{header.artisti}">List of artists</h2>
+     </section>
+	 <section id="dati">
+		<div class="lista">
+			<div class="objLista" th:each="artista : ${artisti}">
+				<a th:href="@{'/artista' + '/' + ${artista.id}}">
+			        <img class="foto" th:src="@{'/images' + '/' + ${artista.nome} + '.jpg'}">
+			     </a>
+			     <section id="infoObj">
+			     <div th:text="|${artista.nome} ${artista.cognome}|">Paolo Rossi</div>
+			     </section>
+            </div>
+		</div>
+	 </section>
 	</section>
 	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
