@@ -55,15 +55,15 @@ public class ArtistaController {
     }
     
     @RequestMapping(value= "/admin/deleteArtisti", method= RequestMethod.GET)
-    public String deleteCollezioneGet(Model model) {
+    public String deleteArtistaGet(Model model) {
     	model.addAttribute("artisti", this.artistaService.tutti());
     	return "admin/deleteArtista.html";
     }
     
-    @RequestMapping(value = "/admin/delete/{id}", method = RequestMethod.POST)
-	public String deleteCollezionePost(@PathVariable("id") Long id, Model model) {
+    @RequestMapping(value = "/admin/deleteArtista/{id}", method = RequestMethod.POST)
+	public String deleteArtistaPost(@PathVariable("id") Long id, Model model) {
 		this.artistaService.deleteArtistaById(id);
 		model.addAttribute("artisti", this.artistaService.tutti());
-		return "artisti.html";
+		return "admin/deleteArtista.html";
 	}
 }
