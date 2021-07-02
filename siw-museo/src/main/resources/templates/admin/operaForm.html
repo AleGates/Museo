@@ -6,7 +6,7 @@
 	<header th:replace="fragments/base.html :: header"></header>
     
     <section>
-	<form th:action="@{/admin/opera}" method="POST" th:object="${opera}">
+	<form class="formIns" th:action="@{/admin/opera}" method="POST" th:object="${opera}">
 	<h2>Inserisci i dati di un'opera</h2>
 		<div th:if="${#fields.hasGlobalErrors()}">
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>

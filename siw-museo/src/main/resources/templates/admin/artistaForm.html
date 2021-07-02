@@ -5,7 +5,7 @@
     <nav th:replace="fragments/base.html :: navbar"></nav>
 	<header th:replace="fragments/base.html :: header"></header>
 	<section>
-	<form th:action="@{/admin/artista}" method="POST" th:object="${artista}">
+	<form class="formIns" th:action="@{/admin/artista}" method="POST" th:object="${artista}">
 	   <h2>Inserisci i dati di un artista</h2>
 		<!--<div th:if="${#fields.hasGlobalErrors()}">
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>

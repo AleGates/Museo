@@ -6,7 +6,7 @@
 	<header th:replace="fragments/base.html :: header"></header>
 
     <section>
-	<form th:action="@{/admin/collezione}" method="POST" th:object="${collezione}">
+	<form class="formIns" th:action="@{/admin/collezione}" method="POST" th:object="${collezione}">
 	<h2>Inserisci i dati di una collezione</h2>
 		<div th:if="${#fields.hasGlobalErrors()}">
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
