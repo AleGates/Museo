@@ -9,7 +9,8 @@
 	<header th:replace="fragments/base.html :: header"></header>
 	  <section>
     <section id="title">
-		<div th:text="${opera.titolo}">Titolo</div>
+		<h3 th:text="${opera.titolo}">Titolo</h3>
+		<h4 th:text="${opera.anno}">Anno</h4>
 		<div>di</div>
 		<a th:href="@{'/artista' + '/' + ${artista.id}}"
 			th:text="|${artista.nome} ${artista.cognome}|">Nome Cognome</a>
@@ -17,11 +18,12 @@
 
 	<section id="dati">
 		<div id="flex-container">
-			<img src="img/compianto-giotto.png" alt="opera" height="400px"
-				width="400px">
+			<img class="foto" th:src="@{'/images' + '/' + ${opera.titolo} + '.jpg'}">
 			<div class="col">
 				<h5>DESCRIZIONE:</h5>
-				<p id="testo">descrizione</p>
+				<p id="testo"
+				th:text="${opera.descrizione}">
+				Descrizione</p>
 			</div>
 		</div>
 	 </section>

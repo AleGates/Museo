@@ -27,32 +27,31 @@
         </div>
         <div class="col"> 
           <h5>BIOGRAFIA:</h5>
-          <p>
-Secondo la maggioranza degli esperti, Giotto nacque nel 1267, a Vicchio. Tale ricostruzione si basa sulla verseggiatura che Pucci fece della Cronica di Giovanni Villani ed � piuttosto attendibile, salvo spostare la data di uno o due anni. Una minoranza della critica tende a porre la sua data di nascita nel 1276, secondo la cronologia che nella seconda met� del XVI secolo offr� Vasari nella biografia dedicata all'artista. La data fornita da Vasari sarebbe inattendibile qualora si tenga per assodato che Giotto doveva essere almeno ventenne attorno al 1290, quando dipinse le sue prime opere.
-Nacque a Colle di Vespignano, in quello che attualmente � il comune di Vicchio nel Mugello, da una famiglia di piccoli possidenti terrieri (Bondone era appunto il padre)[5], famiglia che, come molte altre, si trasfer� solo in seguito a Firenze. Secondo la tradizione letteraria, finora non confermata dai documenti, Giotto era stato affidato dai genitori alla bottega di Cimabue.
-I primi anni del pittore sono stati oggetto di credenze quasi leggendarie fin da quando egli era in vita. Giorgio Vasari racconta come Giotto fosse capace di disegnare una perfetta circonferenza senza bisogno del compasso, la famosa "O" di Giotto. Si narra inoltre che Cimabue avesse scoperto la bravura di Giotto mentre disegnava delle pecore con del carbone su un sasso, aneddoto riportato da Lorenzo Ghiberti e da Giorgio Vasari. Altrettanto leggendario � l'episodio di uno scherzo fatto da Giotto a Cimabue dipingendo su una tavola una mosca: essa sarebbe stata cos� realistica che Cimabue tornando a lavorare sulla tavola avrebbe cercato di scacciarla. Le novelle raccontano verosimilmente soprattutto la grande capacit� tecnica e la naturalezza dell'arte di Giotto.
-Giotto si spos� verso il 1287 con Ciuta (Ricevuta) di Lapo del Pela. La coppia ebbe quattro figlie e quattro figli, dei quali uno, Francesco, divenne a sua volta pittore. Giotto s'adoper� perch� un altro dei suoi figli, di nome anch'egli Francesco, divenisse priore della chiesa di San Martino a Vespignano, oltre che suo procuratore in Mugello, dove allarg� le propriet� terriere della famiglia. Dette poi in sposa ben tre delle sue figlie con uomini nei dintorni del colle mugellano, segno inequivocabile di una sua fortissima "mugellanit�" e dei profondi legami mantenuti dal pittore per tutta la vita col suo territorio d'origine. Recenti studi indicano come una dalle sue prime opere il frammento della Madonna conservato proprio in Mugello nella Pieve di Borgo San Lorenzo, databile intorno al 1290. La prima volta che Giotto venne ufficialmente nominato � in un documento recante la data 1309, nel quale si registra che Palmerino di Guido restituisce in Assisi un prestito a nome suo e del pittore.
-Giotto aveva aperto una bottega dove era circondato da alunni; si occupava soprattutto di progettare le opere e di impostare le composizioni pi� importanti mentre agli alunni lasciava quelle secondarie.
-Giotto super� la smaterializzazione dell'immagine, l'astrattismo propri dell'arte bizantina, si riappropri� magistralmente della realt� naturale di cui fu grande narratore, abile nell'organizzare le scene con realismo e nel creare gruppi di figure che dialogano fra di loro, inserite in uno spazio di cui egli ebbe grande padronanza aprendosi alla terza dimensione, cio� la profondit�. Il naturalismo giottesco fa s� che i personaggi siano sempre caratterizzati da notevole espressivit� di sentimenti e stati d'animo, in una rappresentazione della figura umana resa con plasticit�, con solido accento scultoreo. Giotto compie una profonda indagine dell'emozione umana, resa sempre con vivace realismo.
-          </p> 
+          <p th:text="${artista.biografia}">Biografia</p> 
           </div>
       </div>
     </section>
-    <section id="dati">
-    <div>
-    	<h4 th:text="#{header.opere}">List of opere</h4>
-		<ul>
-			<li th:each="opera : ${opere}">
-				<a href="opera.html" 
-				   th:href="@{'/opera' + '/' + ${opera.id}}" 
-				   th:text="${opera.titolo}">titolo</a>
-				
-				   <div th:text="${opera.anno}">anno</div>
-			</li>
-		</ul>
-	</div>
-    </section>
 </section>
+
+	<section>
+     <section id="title">
+		<h2 th:text="#{header.opere}">List of opere</h2>
+     </section>
+	 <section id="dati">
+		<div class="lista">
+			<div class="objLista" th:each="opera : ${opere}">
+			     <a th:href="@{'/opera' + '/' + ${opera.id}}">
+			        <img class="foto" th:src="@{'/images' + '/' + ${opera.titolo} + '.jpg'}">
+			     </a>
+			     <section class="infoObj">
+			     <div th:text="${opera.titolo}">titolo</div>
+                 <div th:text="${opera.anno}">anno</div>
+			     </section>
+            </div>
+		</div>
+	 </section>
+	</section>
+
 	<footer th:replace="fragments/base.html :: footer"></footer>
   </body>
 
