@@ -46,6 +46,9 @@ public class Artista {
 	private LocalDate dataMorte;
 	
 	private String luogoMorte;
+	
+	@Column (length=2000)
+	private String biografia;
 
 
 

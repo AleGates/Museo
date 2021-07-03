@@ -35,7 +35,11 @@
 			<div>
 				<span>Nazionalita:</span>
 				<span><input type="text" th:field="*{nazionalita}" /></span>
-				<span th:if="${#fields.hasErrors('nazionalita')}" th:errors="*{Nazionalita}"></span>
+				<span th:if="${#fields.hasErrors('nazionalita')}" th:errors="*{nazionalita}"></span>
+			</div>
+			<div>
+				<span>Biografia:</span>
+				<div><textarea th:field="*{biografia}" rows="10" cols="30" maxlength:"2000" required /></div>
 			</div>
 			<div>
 				<span>Data di morte:</span>
