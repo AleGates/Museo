@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import it.uniroma3.siw.museo.controller.validator.ArtistaValidator;
 import it.uniroma3.siw.museo.model.Artista;
 import it.uniroma3.siw.museo.service.ArtistaService;
+import it.uniroma3.siw.museo.service.OperaService;
 
 //da verificare se serve getArtistaPerNomeECognome
 @Controller
@@ -19,6 +20,9 @@ public class ArtistaController {
 	
 	@Autowired
 	private ArtistaService artistaService;
+	
+	@Autowired
+	private OperaService operaService;
 	
     @Autowired
     private ArtistaValidator artistaValidator;
@@ -32,6 +36,7 @@ public class ArtistaController {
     @RequestMapping(value = "/artista/{id}", method = RequestMethod.GET)
     public String getArtistaPerId(@PathVariable("id") Long id, Model model) {
     	model.addAttribute("artista", this.artistaService.artistaPerId(id));
+    	model.addAttribute("opere", this.operaService.trovaPerArtistaId(id));
     	return "artista.html"; 
     }
 
