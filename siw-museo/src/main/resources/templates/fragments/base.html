@@ -70,6 +70,30 @@ nav li a:hover {
   background-color: gainsboro;
 }
 
+/*footer, body, section*/
+footer{
+  background-color: brown;
+  height: 30px;
+  Left: 0;
+  Bottom: 0;
+  Color: white;
+  Text-align: center;
+  Padding: 10px;
+  width: 100%;
+  position: fixed;
+}
+
+Body{
+   Background-color: brown;
+}
+
+section{
+	   margin-top: 220px;  
+	   margin-bottom:60px;
+	   border: 2px solid blue; 
+}
+
+
 /*Ancore*/
 Section a{
   Color:blue;
@@ -87,16 +111,6 @@ Section a:active{
 
 Section a:visited{
   Color: purple; 
-}
-
-Body{
-   Background-color: brown;
-}
-
-section{
-	   margin-top: 220px;  
-	   margin-bottom:60px;
-	   border: 2px solid blue; 
 }
 
 /*Titolo grande della pagina*/
@@ -182,18 +196,6 @@ textarea{
 	margin-top:50px;
 }
 
-
-footer{
-  background-color: brown;
-  height: 30px;
-  Left: 0;
-  Bottom: 0;
-  Color: white;
-  Text-align: center;
-  Padding: 10px;
-  width: 100%;
-  position: fixed;
-}
 /*lista di cose*/
 .lista{
 	padding-top:40px;
@@ -210,7 +212,7 @@ footer{
 
 .infoObj{
 	margin-top: 0px;
-	width: 97%;
+	width: 95.5%;
 	text-align:center;
 	background-color: gold;
 	border: 4px solid brown;
@@ -245,6 +247,58 @@ footer{
 	background-image:url(/images/delete.png);
 }
 
+/*Collezioni*/
+#multiple{
+	display:flex;
+	justify-content: stretch;
+	flex-direction: column;
+}
+
+#multiple a{
+		text-decoration: none;
+}
+
+#singole{
+	background-color: lightgoldenrodyellow;
+	color:brown;
+	border:2px solid brown;
+	text-align: center;
+	padding:20px;
+	font-size:30px;
+    cursor:pointer;
+}
+
+#singole:hover{
+	background-color: brown;
+	color:  lightgoldenrodyellow;
+}
+
+/*Informazioni*/
+#flex-container-info{
+  Background-color: lightgoldenrodyellow;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  Margin-top: 20px;
+}
+
+.col-info{
+  border: 1mm solid black;
+  background-color: white;
+  padding: 5px;
+  width: 44%;
+  border-radius: 10px;
+  margin-right:20px;
+  margin-left:20px;
+  margin-bottom:50px;
+}
+
+#small-info{
+  padding-right: 20px;
+  width: 40%;
+  height:50%;
+}
 	</style>
 </head>
 <body>
