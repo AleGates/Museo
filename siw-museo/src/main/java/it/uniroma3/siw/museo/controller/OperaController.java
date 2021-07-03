@@ -67,8 +67,7 @@ public class OperaController {
     		@RequestParam("co") String collezione, Model model, BindingResult bindingResult) {
     	this.operaValidator.validate(opera, bindingResult);
         if (!bindingResult.hasErrors()) {
-        	collezione.trim(); 
-           
+        	collezione.trim();
             List<Collezione> coll= this.collezioneService.collezionePerNome(collezione);
         	opera.setCollezione(coll.get(0));
         	artista.trim(); 
