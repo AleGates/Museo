@@ -31,13 +31,8 @@
           </div>
       </div>
     </section>
-</section>
-
-	<section>
-     <section id="title">
-		<h2 th:text="#{header.opere}">List of opere</h2>
-     </section>
 	 <section id="dati">
+	 <h3>Le Opere:</h3>
 		<div class="lista">
 			<div class="objLista" th:each="opera : ${opere}">
 			     <a th:href="@{'/opera' + '/' + ${opera.id}}">
@@ -50,7 +45,7 @@
             </div>
 		</div>
 	 </section>
-	</section>
+</section>
 
 	<footer th:replace="fragments/base.html :: footer"></footer>
   </body>
