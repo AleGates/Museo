@@ -29,6 +29,7 @@ public class Collezione {
 	@Column (nullable=false)
 	private String nome;
 
+
 	@Column (length=2000)
 	private String descrizione;
 
