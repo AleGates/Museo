@@ -19,7 +19,7 @@
 			</div>		
 			<div>
 				<span>Descrizione:</span>
-				<div><textarea th:field="*{descrizione}" rows="10" cols="30" maxlength:"240" required /></div>
+				<div><textarea th:field="*{descrizione}" rows="10" cols="30" maxlength:"2000" required /></div>
 				<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>
 			</div>
 		      <div id="tendina" align="left">
