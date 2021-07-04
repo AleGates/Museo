@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(#{del.coll}, stile-collezioni.css)"> </head>
+<body>
+    <nav th:replace="fragments/base.html :: navbar"></nav>
+	<header th:replace="fragments/base.html :: header"></header>
+	<section>
+	  <section id="title">
+    	<h2 th:text="#{header.collezioni}">List of collections</h2>
+      </section>
+	  <section id="dati">
+		<div id="multiple" th:each="collezione : ${collezioni}">
+		<a th:href="@{'/collezione' + '/' + ${collezione.id}}">
+			<div id="singole">
+			<span th:text="${collezione.nome}">Nome</span>
+				 <form th:action="@{'/admin/deleteCollezione' + '/' + ${collezione.id}}" method="POST">
+				    <button type="submit"><img th:src="@{'/images/delete.png'}" height="40px" width="40px"></button>
+			     </form>
+			</div>
+		</a>
+		</div>
+	  </section>
+	</section>
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

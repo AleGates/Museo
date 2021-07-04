@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+  <head xmlns:th="http://www.thymeleaf.org">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Museo di Roma</title>
+    <link th:href="@{/css/stile-home.css}" rel="stylesheet">
+  </head>
+  
+  <body>
+
+   <nav>
+      <ul>
+        <li><a th:href="@{/register}">REGISTRATI</a></li>
+        <li><a th:href="@{/opere}" th:text="#{nav.opere}">Opere</a></li>
+        <li><a th:href="@{/artisti}" th:text="#{nav.art}">Artisti</a></li>
+        <li><a th:href="@{/collezioni}" th:text="#{nav.coll}">Collezioni</a></li>
+        <li><a th:href="@{/info}" th:text="#{nav.info}">Informazioni</a></li>
+        <li><a sec:authorize="isAuthenticated()" th:href="@{/default}" th:text="#{nav.areaRis}">Area Riservata</a></li>
+      </ul>
+    </nav> 
+
+   <header>
+    <h1>Museo di Roma 
+    <img src="images/roma-stemma.png" alt="roma-capitale" height="53px" width="40px">
+    <section sec:authorize="isAnonymous()">
+    <a th:href="@{/login}">
+    <input type="image" id="image" alt="Login" src="/images/userLogin.jpg">
+    </a>
+    </section>
+    </h1>
+    
+   </header>
+ 
+    <section id="dati">
+      <div id="flex-container">
+        <div class="immagini">
+           <img src="images/compianto-giotto.png" alt="img1">
+       	</div>
+        <div class="immagini">
+	   <img src="images/venere-botticelli.png" alt="img2">
+ 	</div>
+	<div class="immagini">
+	  <img src="images/vergine-leonardo.png" alt="img3">
+        </div>
+      </div>
+    </section>
+
+    <footer>Copyright &copy; 2021 Museo di Roma</footer>
+  </body>
+
+</html>

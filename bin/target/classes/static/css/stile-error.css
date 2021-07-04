@@ -1,0 +1,12 @@
+div{
+	margin-top:100px;
+	text-align:center;
+	background-color: white;
+    border: 4mm ridge grey;
+}
+
+p{
+	text-align:center;
+	background-color:yellow;
+	border: dashed red;
+}

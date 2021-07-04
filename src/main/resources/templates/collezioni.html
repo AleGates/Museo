@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(#{nav.coll}, stile-collezioni.css)"> </head>
+<body>
+    <nav th:replace="fragments/base.html :: navbar"></nav>
+	<header th:replace="fragments/base.html :: header"></header>
+	<section>
+	  <section id="title">
+    	<h2 th:text="#{header.collezioni}">List of collections</h2>
+      </section>
+	  <section id="dati">
+		<div id="multiple" th:each="collezione : ${collezioni}">
+		<a th:href="@{'/collezione' + '/' + ${collezione.id}}">
+			<div id="singole" th:text="${collezione.nome}">Nome</div>
+		</a>
+		</div>
+	  </section>
+	</section>
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

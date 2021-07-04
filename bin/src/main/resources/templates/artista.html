@@ -1,0 +1,53 @@
+  <!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head
+	th:replace="fragments/base.html :: headerfiles(#{title.artista}, stile-artista.css)"></head>
+
+  <body>
+    <nav th:replace="fragments/base.html :: navbar"></nav>
+	<header th:replace="fragments/base.html :: header"></header>
+
+<section>
+    <section id="title">
+      <h2 th:text="|${artista.nome} ${artista.cognome}|">Nome Cognome artista</h2>
+      </section>
+    
+    <section id="dati">
+      <div id="flex-container">
+        <div class="col" id="small">
+      <ul>
+       		<li>Data di Nascita: <span th:text="${artista.dataNascita}">nascita</span> </li> 
+			<li>Luogo di Nascita: <span th:text="${artista.luogoNascita}">luogo</span> </li> 
+			<li>Nazionalita: <span th:text="${artista.nazionalita}">nazionalita</span> </li> 
+			<li>Data di Morte: <span th:text="${artista.dataMorte}">morte</span> </li> 
+			<li>Luogo di Morte: <span th:text="${artista.luogoMorte}">luogo</span> </li> 
+      </ul>
+        </div>
+        <div class="col"> 
+          <h5>BIOGRAFIA:</h5>
+          <p th:text="${artista.biografia}">Biografia</p> 
+          </div>
+      </div>
+    </section>
+	 <section id="dati">
+	 <h3>Le Opere:</h3>
+		<div class="lista">
+			<div class="objLista" th:each="opera : ${opere}">
+			     <a th:href="@{'/opera' + '/' + ${opera.id}}">
+			        <img class="foto" th:src="@{'/images' + '/' + ${opera.titolo} + '.jpg'}">
+			     </a>
+			     <section class="infoObj">
+			     <div th:text="${opera.titolo}">titolo</div>
+                 <div th:text="${opera.anno}">anno</div>
+			     </section>
+            </div>
+		</div>
+	 </section>
+</section>
+
+	<footer th:replace="fragments/base.html :: footer"></footer>
+  </body>
+
+</html>
