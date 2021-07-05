@@ -84,8 +84,9 @@ Body{
   flex-wrap: wrap;
 }
 .immagini{
-	width:400px;
-	margin-bottom: 20px;
+    width: 380px;
+    height: 380px;
+    margin-bottom:20px;
 }
 div img{
 	margin-bottom:20px;
