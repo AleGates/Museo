@@ -13,15 +13,15 @@
 		</section>
 
 		<section id="dati">
-		<div>di</div>
-		<a th:href="@{'/artista' + '/' + ${artista.id}}"
-			th:text="|${artista.nome} ${artista.cognome}|">Nome Cognome</a>
+		<div id="intestazione">Realizzata da <a th:href="@{'/artista' + '/' + ${artista.id}}"
+			        th:text="|${artista.nome} ${artista.cognome}|">Nome Cognome</a>
+		</div>	
 			<div id="flex-container">
 				<img class="foto"
 					th:src="@{'/images' + '/' + ${opera.titolo} + '.jpg'}">
 				<div class="col">
 					<h5>DESCRIZIONE:</h5>
-					<p id="testo" th:text="${opera.descrizione}">Descrizione</p>
+					<p id="paragrafo" th:text="${opera.descrizione}">Descrizione</p>
 				</div>
 			</div>
 		</section>

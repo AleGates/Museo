@@ -27,12 +27,12 @@
         </div>
         <div class="col"> 
           <h5>BIOGRAFIA:</h5>
-          <p th:text="${artista.biografia}">Biografia</p> 
+          <p id="paragrafo" th:text="${artista.biografia}">Biografia</p> 
           </div>
       </div>
     </section>
 	 <section id="dati">
-	 <h3>Le Opere:</h3>
+	 <div id="intestazione"><h3>Le Opere:</h3></div>
 		<div class="lista">
 			<div class="objLista" th:each="opera : ${opere}">
 			     <a th:href="@{'/opera' + '/' + ${opera.id}}">

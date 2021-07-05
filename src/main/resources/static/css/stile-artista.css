@@ -46,14 +46,3 @@
   width: 30%;
   Height: 250px;
 }
-
-p{
-  height: 270px;
-  overflow: scroll;
-  margin: 10;
-  border-color: black;
-  border-width: 1px;
-  border-style: dotted;
-  border-radius: 10px;
-  padding: 10px;
-}

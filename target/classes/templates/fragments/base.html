@@ -89,8 +89,7 @@ Body{
 
 section{
 	   margin-top: 220px;  
-	   margin-bottom:60px;
-	   border: 2px solid blue; 
+	   margin-bottom:60px; 
 }
 
 
@@ -299,6 +298,22 @@ textarea{
   width: 40%;
   height:50%;
 }
+
+#paragrafo{
+  height: 270px;
+  overflow:scroll;
+  margin: 10;
+  border-color: black;
+  border-width: 1px;
+  border-style: dotted;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#intestazione{
+	padding:20px;
+}
+
 	</style>
 </head>
 <body>
@@ -309,7 +324,7 @@ textarea{
         <li><a th:href="@{/artisti}" th:text="#{nav.art}">Artisti</a></li>
         <li><a th:href="@{/collezioni}" th:text="#{nav.coll}">Collezioni</a></li>
         <li><a th:href="@{/info}" th:text="#{nav.info}">Informazioni</a></li></span>
-        <span><li><a sec:authorize="isAuthenticated()" th:href="@{/default}">Area Riservata</a></li>
+        <span><li><a sec:authorize="isAuthenticated()" th:href="@{/default}" th:text="#{nav.areaRis}">Area Riservata</a></li>
         <li><a sec:authorize="isAnonymous()" th:href="@{/login}">Login</a></li>
         <li><a sec:authorize="isAuthenticated()" th:href="@{/logout}">Logout</a></li> <span> 
          <!--   <a  sec:authorize="isAnonymous()" id="login" th:href="@{/login}">Login</a>

@@ -13,13 +13,14 @@
 
 	<section>
 		<section id="title">
-			<h3 th:text="${collezione.nome}">nome</h3>
+			<h2 th:text="${collezione.nome}">nome</h2>
 		</section>
 		<section id="dati">
 			<div>A cura di</div>
 			<h4 th:text="|${curatore.nome} ${curatore.cognome}|">Nome
 				Cognome</h4>
 			<div th:text="${collezione.descrizione}">Descrizione</div>
+		    <div id="intestazione"><h3>Le Opere:</h3></div>
 			<div class="lista">
 				<div class="objLista" th:each="opera : ${opere}">
 					<a th:href="@{'/opera' + '/' + ${opera.id}}"> <img class="foto"
