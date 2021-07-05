@@ -34,15 +34,9 @@
  
     <section id="dati">
       <div id="flex-container">
-        <div class="immagini">
-           <img src="images/compianto-giotto.png" alt="img1">
+        <div th:each="opera : ${opere}" class="immagini">
+            <img th:src="@{'/images' + '/' + ${opera.titolo} + '.jpg'}">
        	</div>
-        <div class="immagini">
-	   <img src="images/venere-botticelli.png" alt="img2">
- 	</div>
-	<div class="immagini">
-	  <img src="images/vergine-leonardo.png" alt="img3">
-        </div>
       </div>
     </section>
 
