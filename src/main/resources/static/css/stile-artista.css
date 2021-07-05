@@ -1,0 +1,48 @@
+#flex-container{
+  Background-color: lightgoldenrodyellow;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  Height: 400px;
+  padding: 20px;
+  Margin-top: 0px;
+}
+
+#opere{
+  Background-color: lightgoldenrodyellow;
+  Padding: 10px;
+  Padding-bottom: 40px;
+  Padding-left: 20px;
+}
+
+.col{
+  background-color: white;
+  padding: 5px;
+  Height: 370px;
+  width: 60%;
+  border-radius: 10px;
+}
+
+#flex-container-opere{
+  Background-color: lightgoldenrodyellow;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 20px;
+  Margin-top: 0px;
+  Flex-wrap: wrap;
+}
+
+.opera{
+  Margin-top: 20px;
+  Margin-bottom: 20px;
+  Margin-left: 40px;
+  width: 30%;
+
+}
+
+#small{
+  padding-right: 20px;
+  width: 30%;
+  Height: 250px;
+}

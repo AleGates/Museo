@@ -1,0 +1,16 @@
+#flex-container{
+  Background-color: lightgoldenrodyellow;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+  padding:20px;
+  Margin-top:0px;
+}
+
+.col{
+  background-color:white;
+  padding:5px;
+  Height:370px;
+  width:35%;
+  border-radius:10px;
+}

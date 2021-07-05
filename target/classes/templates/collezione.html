@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head
+	th:replace="fragments/base.html :: headerfiles(#{title.collezione}, stile-collezione.css)"></head>
+
+<body>
+
+	<nav th:replace="fragments/base.html :: navbar"></nav>
+
+	<header th:replace="fragments/base.html :: header"></header>
+
+	<section>
+		<section id="title">
+			<h2 th:text="${collezione.nome}">nome</h2>
+		</section>
+		<section id="dati">
+			<div>A cura di</div>
+			<h4 th:text="|${curatore.nome} ${curatore.cognome}|">Nome
+				Cognome</h4>
+			<div th:text="${collezione.descrizione}">Descrizione</div>
+		    <div id="intestazione"><h3>Le Opere:</h3></div>
+			<div class="lista">
+				<div class="objLista" th:each="opera : ${opere}">
+					<a th:href="@{'/opera' + '/' + ${opera.id}}"> <img class="foto"
+						th:src="@{'/images' + '/' + ${opera.titolo} + '.jpg'}">
+					</a>
+					<section class="infoObj">
+						<div th:text="${opera.titolo}">titolo</div>
+						<div th:text="${opera.anno}">anno</div>
+					</section>
+				</div>
+			</div>
+		</section>
+	</section>
+
+	<footer th:replace="fragments/base.html :: footer"></footer>
+
+</body>
+
+</html>

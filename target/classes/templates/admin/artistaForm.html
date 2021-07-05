@@ -1,0 +1,62 @@
+!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(title='Artista Form', nomecss='stile-artistaForm.css')"> </head>
+<body>
+    <nav th:replace="fragments/base.html :: navbar"></nav>
+	<header th:replace="fragments/base.html :: header"></header>
+	<section>
+	<form class="formIns" th:action="@{/admin/artista}" method="POST" th:object="${artista}">
+	   <h2>Inserisci i dati di un artista</h2>
+		<div th:if="${#fields.hasGlobalErrors()}">
+  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+		</div>
+		<div>
+			<div>
+				<span>Nome:</span>
+				<span><input type="text" th:field="*{nome}" /></span>
+				<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+			</div>		
+			<div>
+				<span>Cognome:</span>
+				<span><input type="text" th:field="*{cognome}" /></span>
+				<span th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></span>
+			</div>
+			<div>
+				<span>Data di nascita:</span>
+				<span><input type="date" th:value="*{dataNascita}" th:field="*{dataNascita}" /></span>
+				<span th:if="${#fields.hasErrors('dataNascita')}" th:errors="*{dataNascita}"></span>
+			</div>
+			
+			<div>
+				<span>Luogo Nascita:</span>
+				<span><input type="text" th:field="*{luogoNascita}" /></span>
+				<span th:if="${#fields.hasErrors('luogoNascita')}" th:errors="*{luogoNascita}"></span>
+			</div>
+			<div>
+				<span>Nazionalita:</span>
+				<span><input type="text" th:field="*{nazionalita}" /></span>
+				<span th:if="${#fields.hasErrors('nazionalita')}" th:errors="*{nazionalita}"></span>
+			</div>
+			<div>
+				<span>Biografia:</span>
+				<div><textarea th:field="*{biografia}" rows="10" cols="30" maxlength:"2000" required /></div>
+			</div>
+			<div>
+				<span>Data di morte:</span>
+				<span><input type="date" th:value="*{dataMorte}" th:field="*{dataMorte}" /></span>
+				<span th:if="${#fields.hasErrors('dataMorte')}" th:errors="*{dataMorte}"></span>
+			</div>
+			<div>
+				<span>Luogo Morte:</span>
+				<span><input type="text" th:field="*{luogoMorte}" /></span>
+				<span th:if="${#fields.hasErrors('luogoMorte')}" th:errors="*{luogoMorte}"></span>
+			</div>
+			<div>
+				<span><button class="buttonForm "type="submit">Invio</button></span>
+			</div>
+		</div>
+	</form>
+	</section>
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>
