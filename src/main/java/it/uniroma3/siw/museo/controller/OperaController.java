@@ -20,6 +20,7 @@ import it.uniroma3.siw.museo.model.Opera;
 import it.uniroma3.siw.museo.service.ArtistaService;
 import it.uniroma3.siw.museo.service.CollezioneService;
 import it.uniroma3.siw.museo.service.OperaService;
+import net.bytebuddy.asm.Advice.This;
 
 //vanno aggiunti metodi di: aggiunta di artista nell'opera corrente
 //va veriricato il funzionamento di deleteOpera (specie il path e il return)
@@ -57,7 +58,9 @@ public class OperaController {
 
     @RequestMapping(value = "/opere", method = RequestMethod.GET)
     public String getOpere(Model model) {
-    		model.addAttribute("opere", this.operaService.tutti());
+    	    List<Opera> opereList = this.operaService.tutti();
+    		model.addAttribute("opere", opereList);
+    		model.addAttribute("totOpere", opereList.size());
     		return "opere.html";
     }
     
