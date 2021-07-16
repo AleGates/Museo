@@ -23,11 +23,7 @@ public class MainController {
 	
 	@RequestMapping(value = {"/", "home"}, method = RequestMethod.GET)
 	public String home(Model model) {
-	     List<Opera> opere = this.operaService.tutti();
-	     if(opere.size()>=3) {
-	     Collections.shuffle(opere);
-	     model.addAttribute("opere", opere.subList(0, 3));
-	     }
+	     model.addAttribute("opere", this.operaService.prendiOpereACaso(3));
 		 return "home";
 	}
 

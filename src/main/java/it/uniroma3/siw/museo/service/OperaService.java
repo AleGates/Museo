@@ -1,6 +1,7 @@
 package it.uniroma3.siw.museo.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
@@ -62,5 +63,11 @@ public class OperaService{
 
 	public void deleteOperaById(Long id) {
 		operaRepository.deleteById(id);
+	}
+	
+	public List<Opera> prendiOpereACaso(int numero){
+	     List<Opera> casuali = new ArrayList<Opera>();
+         casuali = this.operaRepository.dammiNOggettiRandom(numero);
+	     return casuali;
 	}
 }
